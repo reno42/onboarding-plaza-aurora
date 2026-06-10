@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playbooks de Onboarding · Plaza Aurora</title>
+  <meta name="description" content="Playbooks de onboarding para Plaza Aurora: Bienvenida de equipo, incorporación de locatarios y lanzamiento de campañas de marketing.">
+  <style>
+    :root {
+      --pa-gold: #d4a843;
+      --pa-gold-light: #f5e6c8;
+      --pa-navy: #1a1f36;
+      --pa-navy-light: #252b45;
+      --pa-white: #ffffff;
+      --pa-gray-50: #f9fafb;
+      --pa-gray-100: #f3f4f6;
+      --pa-gray-200: #e5e7eb;
+      --pa-gray-400: #9ca3af;
+      --pa-gray-600: #4b5563;
+      --pa-gray-800: #1f2937;
+      --pa-radius: 12px;
+      --pa-transition: 0.2s ease;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--pa-gray-50);
+      color: var(--pa-gray-800);
+      line-height: 1.6;
+    }
+    /* Nav */
+    .nav {
+      background: var(--pa-navy);
+      padding: 1rem 2rem;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.75rem;
+      text-decoration: none;
+    }
+    .nav-logo-icon {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, var(--pa-gold), #c49530);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--pa-navy); font-weight: 800; font-size: 1.1rem;
+    }
+    .nav-logo-text { color: var(--pa-white); font-weight: 700; font-size: 1.15rem; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: var(--pa-gray-400); text-decoration: none; font-size: 0.9rem; transition: color var(--pa-transition); }
+    .nav-links a:hover { color: var(--pa-gold); }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--pa-navy) 0%, #2d3560 100%);
+      color: var(--pa-white);
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: -2px; left: 0; right: 0;
+      height: 4px; background: linear-gradient(90deg, var(--pa-gold), #e8c96a, var(--pa-gold));
+    }
+    .hero-badge {
+      display: inline-block; background: rgba(212,168,67,0.2); border: 1px solid var(--pa-gold);
+      color: var(--pa-gold); padding: 0.35rem 1rem; border-radius: 50px;
+      font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem;
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+    .hero p { font-size: 1.15rem; color: var(--pa-gray-400); max-width: 650px; margin: 0 auto; }
+
+    /* Sections */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 5rem 0; }
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-eyebrow {
+      display: inline-block; color: var(--pa-gold); font-weight: 700; font-size: 0.8rem;
+      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem;
+    }
+    .section-header h2 { font-size: 2rem; font-weight: 800; color: var(--pa-navy); margin-bottom: 0.75rem; }
+    .section-header p { color: var(--pa-gray-600); max-width: 600px; margin: 0 auto; }
+
+    /* Playbook Cards */
+    .playbook-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; }
+    .playbook-card {
+      background: var(--pa-white); border-radius: var(--pa-radius);
+      box-shadow: var(--shadow-sm); overflow: hidden;
+      transition: box-shadow var(--pa-transition), transform var(--pa-transition);
+      border: 1px solid var(--pa-gray-200);
+    }
+    .playbook-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .playbook-card-header {
+      padding: 2rem 1.75rem 1.25rem;
+      border-bottom: 1px solid var(--pa-gray-100);
+    }
+    .playbook-number {
+      display: inline-block; width: 36px; height: 36px;
+      background: var(--pa-navy); color: var(--pa-gold); border-radius: 50%;
+      font-weight: 800; font-size: 0.9rem; text-align: center; line-height: 36px;
+      margin-bottom: 0.75rem;
+    }
+    .playbook-card-header h3 { font-size: 1.25rem; color: var(--pa-navy); margin-bottom: 0.35rem; }
+    .playbook-card-header .playbook-subtitle { font-size: 0.85rem; color: var(--pa-gray-600); }
+    .playbook-steps { padding: 1.5rem 1.75rem 2rem; }
+    .playbook-steps ol { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem; }
+    .playbook-steps li { position: relative; padding-left: 2.75rem; }
+    .playbook-steps li::before {
+      content: attr(data-step);
+      position: absolute; left: 0; top: 0;
+      width: 28px; height: 28px;
+      background: var(--pa-gold-light); color: var(--pa-navy);
+      border-radius: 6px; font-size: 0.75rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .playbook-steps .step-title { font-weight: 700; font-size: 0.95rem; color: var(--pa-navy); margin-bottom: 0.15rem; }
+    .playbook-steps .step-desc { font-size: 0.85rem; color: var(--pa-gray-600); line-height: 1.5; }
+
+    /* Detailed Playbook View */
+    .playbook-detail { background: var(--pa-white); border-radius: var(--pa-radius); box-shadow: var(--shadow-sm); overflow: hidden; margin-top: 1.5rem; }
+    .playbook-detail-header {
+      background: var(--pa-navy); color: var(--pa-white); padding: 2.5rem 2rem;
+      display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+    }
+    .playbook-detail-icon {
+      width: 72px; height: 72px; background: rgba(212,168,67,0.15);
+      border-radius: 16px; display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+    }
+    .playbook-detail-header h3 { font-size: 1.5rem; font-weight: 700; }
+    .playbook-detail-header p { color: var(--pa-gray-400); margin-top: 0.25rem; }
+    .playbook-detail-body { padding: 2.5rem 2rem; }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 8px; top: 0; bottom: 0;
+      width: 2px; background: var(--pa-gray-200);
+    }
+    .timeline-item { position: relative; margin-bottom: 2rem; padding-left: 1.5rem; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -1.55rem; top: 0.4rem;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--pa-gold); border: 2px solid var(--pa-white);
+      box-shadow: 0 0 0 2px var(--pa-gold);
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-phase {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; color: var(--pa-gold); margin-bottom: 0.25rem;
+    }
+    .timeline-title { font-weight: 700; font-size: 1.05rem; color: var(--pa-navy); margin-bottom: 0.35rem; }
+    .timeline-desc { font-size: 0.9rem; color: var(--pa-gray-600); line-height: 1.6; }
+    .timeline-checklist {
+      margin-top: 0.75rem; list-style: none; display: flex; flex-direction: column; gap: 0.4rem;
+    }
+    .timeline-checklist li {
+      font-size: 0.85rem; color: var(--pa-gray-600);
+      padding-left: 1.5rem; position: relative;
+    }
+    .timeline-checklist li::before {
+      content: '☐'; position: absolute; left: 0; color: var(--pa-gray-400);
+      font-size: 0.9rem;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: var(--pa-navy); color: var(--pa-white);
+      padding: 4rem 2rem; text-align: center;
+    }
+    .cta-section h2 { font-size: 1.75rem; margin-bottom: 1rem; }
+    .cta-section p { color: var(--pa-gray-400); margin-bottom: 2rem; }
+    .btn {
+      display: inline-block; padding: 0.85rem 2rem;
+      background: var(--pa-gold); color: var(--pa-navy);
+      font-weight: 700; border-radius: 8px; text-decoration: none;
+      transition: background var(--pa-transition);
+    }
+    .btn:hover { background: #e8c050; }
+
+    /* Footer */
+    .footer {
+      background: var(--pa-gray-100); padding: 2rem;
+      text-align: center; color: var(--pa-gray-400); font-size: 0.85rem;
+      border-top: 1px solid var(--pa-gray-200);
+    }
+    .footer a { color: var(--pa-navy); text-decoration: none; font-weight: 600; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav { padding: 0.75rem 1rem; }
+      .nav-links { display: none; }
+      .playbook-detail-header { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">PA</div>
+      <span class="nav-logo-text">Plaza Aurora</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#playbooks">Playbooks</a></li>
+      <li><a href="#bienvenida">Bienvenida</a></li>
+      <li><a href="#locatarios">Locatarios</a></li>
+      <li><a href="#marketing">Marketing</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <span class="hero-badge">Sistema de Onboarding</span>
+  <h1>Playbooks de Onboarding<br>Plaza Aurora</h1>
+  <p>Tres metodologías probadas para incorporar equipo, nuevos locatarios y campañas de marketing. Diseñado para centros comerciales que quieren crecer con orden.</p>
+</header>
+
+<section class="section" id="playbooks">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Metodologías</span>
+      <h2>3 Playbooks de Onboarding</h2>
+      <p>Cada playbook está basado en prácticas reales de centros comerciales y equipos de marketing. Adaptable a las necesidades de Plaza Aurora.</p>
+    </div>
+    <div class="playbook-grid">
+      <div class="playbook-card">
+        <div class="playbook-card-header">
+          <div class="playbook-number">1</div>
+          <h3>Playbook de Bienvenida</h3>
+          <p class="playbook-subtitle">30 · 60 · 90 días para nuevo talento</p>
+        </div>
+        <div class="playbook-steps">
+          <ol>
+            <li data-step="1"><span class="step-title">Pre-boarding</span><span class="step-desc">Documentación, accesos y kit de bienvenida antes del día 1</span></li>
+            <li data-step="2"><span class="step-title">Semana 1: Inmersión</span><span class="step-desc">Recorrido por el centro comercial, conocer al equipo, herramientas</span></li>
+            <li data-step="3"><span class="step-title">Día 30: Autonomía inicial</span><span class="step-desc">Primera revisión, manejo básico de procesos y CRM</span></li>
+            <li data-step="4"><span class="step-title">Día 60: Proyectos reales</span><span class="step-desc">Lidera una iniciativa pequeña, feedback estructurado</span></li>
+            <li data-step="5"><span class="step-title">Día 90: Integración total</span><span class="step-desc">Evaluación final, definición de objetivos anuales, plan de crecimiento</span></li>
+          </ol>
+        </div>
+      </div>
+      <div class="playbook-card">
+        <div class="playbook-card-header">
+          <div class="playbook-number">2</div>
+          <h3>Playbook de Locatarios</h3>
+          <p class="playbook-subtitle">Incorporación de nuevas marcas al CC</p>
+        </div>
+        <div class="playbook-steps">
+          <ol>
+            <li data-step="1"><span class="step-title">Contrato y documentación</span><span class="step-desc">Firma, garantías, seguros, planos y permisos municipales</span></li>
+            <li data-step="2"><span class="step-title">Adecuación del local</span><span class="step-desc">Obra civil, instalaciones, supervisión de estándares del CC</span></li>
+            <li data-step="3"><span class="step-title">Branding y señalética</span><span class="step-desc">Aprobación de letrero, vitrinas, uniformes y material POP</span></li>
+            <li data-step="4"><span class="step-title">Capacitación de personal</span><span class="step-desc">Normas del CC, protocolos de seguridad, atención al cliente</span></li>
+            <li data-step="5"><span class="step-title">Inauguración y promoción</span><span class="step-desc">Evento de apertura, difusión en redes del CC, campaña de lanzamiento</span></li>
+          </ol>
+        </div>
+      </div>
+      <div class="playbook-card">
+        <div class="playbook-card-header">
+          <div class="playbook-number">3</div>
+          <h3>Playbook de Marketing</h3>
+          <p class="playbook-subtitle">Lanzamiento de campañas y eventos</p>
+        </div>
+        <div class="playbook-steps">
+          <ol>
+            <li data-step="1"><span class="step-title">Brief y objetivo</span><span class="step-desc">Definir KPIs, audiencia, presupuesto y fechas clave</span></li>
+            <li data-step="2"><span class="step-title">Creatividad y assets</span><span class="step-desc">Piezas gráficas, copy, landing page, material audiovisual</span></li>
+            <li data-step="3"><span class="step-title">Coordinación con locatarios</span><span class="step-desc">Comunicar la campaña, obtener participación y descuentos</span></li>
+            <li data-step="4"><span class="step-title">Ejecución multicanal</span><span class="step-desc">Email, RRSS, WhatsApp, pauta digital, pantallas del CC</span></li>
+            <li data-step="5"><span class="step-title">Medición y cierre</span><span class="step-desc">Reporte de resultados, aprendizajes, retroalimentación a locatarios</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Playbook 1: Bienvenida -->
+<section class="section" id="bienvenida" style="background: var(--pa-white);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Playbook 1</span>
+      <h2>Bienvenida de Equipo (30·60·90)</h2>
+      <p>Basado en el modelo de onboarding estructurado usado por equipos de retail y centros comerciales. El objetivo: que cada nueva persona del equipo se vuelva productiva y autónoma en 90 días.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-phase">Pre-boarding · Antes del día 1</div>
+        <div class="timeline-title">Preparación y documentación</div>
+        <div class="timeline-desc">Todo listo para que la persona arranque sin fricción desde el minuto cero.</div>
+        <ul class="timeline-checklist">
+          <li>Contrato firmado y enviado a contabilidad</li>
+          <li>Creación de correo corporativo (@plazaaurora.com)</li>
+          <li>Accesos: CRM, Google Drive, Slack/WhatsApp grupal, calendario</li>
+          <li>Kit de bienvenida: manual del empleado, croquis del CC, directorio</li>
+          <li>Asignación de buddy/mentor (persona que acompaña las primeras semanas)</li>
+          <li>Agenda de la primera semana enviada por correo</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-phase">Semana 1 · Inmersión</div>
+        <div class="timeline-title">Conocer el terreno y las personas</div>
+        <div class="timeline-desc">La primera semana es 100% conocer: el espacio físico, las personas, la cultura y los procesos. Cero presión de output.</div>
+        <ul class="timeline-checklist">
+          <li>Recorrido completo por el centro comercial (locales, accesos, estacionamiento, zona de eventos)</li>
+          <li>Presentación con cada jefe de área y locatarios clave</li>
+          <li>Sesión de marca: historia de Plaza Aurora, misión, valores, tono de comunicación</li>
+          <li>Training de herramientas: CRM, calendario de eventos, sistema de tickets</li>
+          <li>Almuerzo de bienvenida con el equipo directo</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-phase">Día 30 · Autonomía inicial</div>
+        <div class="timeline-title">Primera revisión y manejo básico de procesos</div>
+        <div class="timeline-desc">Ya conoce la operación diaria. Puede resolver tareas sin supervisión constante.</div>
+        <ul class="timeline-checklist">
+          <li>Revisión 1:1 con jefe directo — ¿qué funciona? ¿qué falta?</li>
+          <li>Maneja solo(a) el CRM y calendario de eventos</li>
+          <li>Ya se comunica directamente con al menos 5 locatarios</li>
+          <li>Ha participado en al menos 1 evento o campaña</li>
+          <li>Feedback escrito del buddy/mentor</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-phase">Día 60 · Proyectos reales</div>
+        <div class="timeline-title">Liderazgo de iniciativas pequeñas</div>
+        <div class="timeline-desc">De observador a ejecutor. Toma ownership de un proyecto pequeño pero real.</div>
+        <ul class="timeline-checklist">
+          <li>Lidera una mini-campaña o evento pequeño (ej: promoción de fin de semana)</li>
+          <li>Revisión de desempeño con KPIs medibles</li>
+          <li>Identifica oportunidades de mejora en su área</li>
+          <li>Sesión de feedback 360° con el equipo</li>
+          <li>Ajuste de plan de desarrollo personal</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-phase">Día 90 · Integración total</div>
+        <div class="timeline-title">Miembro pleno del equipo</div>
+        <div class="timeline-desc">Totalmente integrado(a). Conoce los procesos, tiene relaciones establecidas y genera resultados.</div>
+        <ul class="timeline-checklist">
+          <li>Evaluación final de onboarding (formulario de satisfacción)</li>
+          <li>Definición de OKRs para el año</li>
+          <li>Plan de crecimiento: capacitaciones, cursos, conferencias</li>
+          <li>Fin del acompañamiento formal del buddy</li>
+          <li>Ceremonia de cierre: reconocimiento del equipo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Playbook 2: Locatarios -->
+<section class="section" id="locatarios">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Playbook 2</span>
+      <h2>Incorporación de Locatarios</h2>
+      <p>Basado en el manual de operaciones para nuevos arrendatarios de centros comerciales. Cubre desde la firma del contrato hasta la inauguración.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-phase">Fase 1 · Legal y documentación (Semana 1-2)</div>
+        <div class="timeline-title">Contrato, garantías y permisos</div>
+        <div class="timeline-desc">Todo el papeleo debe estar listo antes de tocar un ladrillo. Sin excepciones.</div>
+        <ul class="timeline-checklist">
+          <li>Firma de contrato de arrendamiento (plazo, renta, mantenimiento, penalidades)</li>
+          <li>Entrega de carta garantía o depósito en garantía</li>
+          <li>Póliza de seguro de responsabilidad civil</li>
+          <li>Permisos municipales: licencia de funcionamiento, defensa civil, INDECI</li>
+          <li>Entrega de planos arquitectónicos del local</li>
+          <li>Ficha RUC activa y vigente</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-phase">Fase 2 · Adecuación del local (Semana 3-6)</div>
+        <div class="timeline-title">Obra civil e instalaciones</div>
+        <div class="timeline-desc">El locatario adecúa el espacio siguiendo los lineamientos del centro comercial. La administración supervisa.</div>
+        <ul class="timeline-checklist">
+          <li>Entrega de local en obra gris (o casco terminado según acuerdo)</li>
+          <li>Instalaciones eléctricas, sanitarias, data y HVAC</li>
+          <li>Pisos, paredes, cielo raso según estándares del CC</li>
+          <li>Supervisión semanal de avance de obra (checklist de hitos)</li>
+          <li>Conexión a red de datos y telefonía del CC</li>
+          <li>Pruebas de sistemas contra incendios y rutas de evacuación</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-phase">Fase 3 · Branding y señalética (Semana 5-7)</div>
+        <div class="timeline-title">Identidad visual y vitrinas</div>
+        <div class="timeline-desc">El locatario debe cumplir el manual de imagen del centro comercial. Todo letrero, vitrina y uniforme requiere aprobación.</div>
+        <ul class="timeline-checklist">
+          <li>Presentación de diseño de letrero principal (medidas, iluminación, materiales)</li>
+          <li>Aprobación del diseño de vitrinas y fachada interior</li>
+          <li>Uniformes del personal aprobados</li>
+          <li>Material POP autorizado (banners, displays, colgantes)</li>
+          <li>Cartel de "Próxima apertura" instalado</li>
+          <li>Fotografía profesional del local para web y redes del CC</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-phase">Fase 4 · Capacitación (Semana 7-8)</div>
+        <div class="timeline-title">Entrenamiento de personal del local</div>
+        <div class="timeline-desc">Todo el personal que trabajará en el local debe conocer las normas y protocolos del centro comercial.</div>
+        <ul class="timeline-checklist">
+          <li>Inducción de normas del CC: horarios, residuos, carga y descarga</li>
+          <li>Protocolo de seguridad y emergencias (evacuación, sismos, incendios)</li>
+          <li>Manual de convivencia: ruido, olores, manejo de residuos</li>
+          <li>Canales de comunicación: grupo de WhatsApp de locatarios, app del CC</li>
+          <li>Capacitación en atención al cliente (estándar Plaza Aurora)</li>
+          <li>Alta en el directorio del CC (web, app, pantallas)</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-phase">Fase 5 · Inauguración (Semana 8-9)</div>
+        <div class="timeline-title">Apertura y promoción</div>
+        <div class="timeline-desc">La inauguración es un evento que beneficia a todos. El CC apoya con difusión y el locatario con ofertas de apertura.</div>
+        <ul class="timeline-checklist">
+          <li>Definición de fecha de inauguración (coordinar con calendario del CC)</li>
+          <li>Ofertas de inauguración (descuentos, 2x1, regalos por compra)</li>
+          <li>Difusión en redes sociales del CC (3 posts: previo, día, posterior)</li>
+          <li>Anuncio en pantallas y banners del CC</li>
+          <li>Inauguración con ceremonia de corte de cinta</li>
+          <li>Post-apertura: encuesta de satisfacción al locatario (día 30)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Playbook 3: Marketing -->
+<section class="section" id="marketing" style="background: var(--pa-white);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Playbook 3</span>
+      <h2>Lanzamiento de Campañas de Marketing</h2>
+      <p>Inspirado en los playbooks de marketing de centros comerciales como Jockey Plaza, Real Plaza y Mega Plaza. Un proceso repetible para que cada campaña o evento salga impecable.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-phase">Fase 1 · Brief y estrategia (3-4 semanas antes)</div>
+        <div class="timeline-title">Definir el qué, por qué y para quién</div>
+        <div class="timeline-desc">Sin un brief sólido, la campaña nace muerta. Aquí se alinean todas las áreas.</div>
+        <ul class="timeline-checklist">
+          <li>Objetivo SMART: ¿tráfico, ventas, awareness, fidelización?</li>
+          <li>Audiencia objetivo: edad, zona (Independencia, Los Olivos, Lima Norte), intereses</li>
+          <li>Presupuesto total desglosado: producción, pauta, premios, logística</li>
+          <li>Fechas clave: inicio, hitos, cierre, post-mortem</li>
+          <li>KPIs medibles: footfall, ventas reportadas, alcance en RRSS, nuevos seguidores</li>
+          <li>Alineación con locatarios: reunión de presentación de campaña</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-phase">Fase 2 · Creatividad y producción (2-3 semanas antes)</div>
+        <div class="timeline-title">Assets visuales y copy</div>
+        <div class="timeline-desc">Todas las piezas deben estar listas y aprobadas al menos 1 semana antes del lanzamiento.</div>
+        <ul class="timeline-checklist">
+          <li>Concepto creativo: nombre de campaña, tagline, paleta de colores</li>
+          <li>Piezas gráficas: Instagram (feed + stories), Facebook, TikTok, email</li>
+          <li>Landing page o enlace de destino (WhatsApp, web del CC)</li>
+          <li>Material audiovisual: reels, videos para pantallas del CC</li>
+          <li>Copy para cada canal (adaptado por formato)</li>
+          <li>Aprobación final de administración</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-phase">Fase 3 · Coordinación con locatarios (2 semanas antes)</div>
+        <div class="timeline-title">Activar a las marcas del CC</div>
+        <div class="timeline-desc">Una campaña sin locatarios es solo un post. La magia está en que las marcas participen con ofertas reales.</div>
+        <ul class="timeline-checklist">
+          <li>Envío de kit de campaña a locatarios: brief, assets, sugerencias de ofertas</li>
+          <li>Recolección de promociones de cada local participante</li>
+          <li>Brief a locatarios: qué publicar en sus propias redes y cuándo</li>
+          <li>Coordinación de material POP en locales (afiches, displays, floor stickers)</li>
+          <li>Confirmación de participación: quiénes entran y con qué oferta</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-phase">Fase 4 · Ejecución multicanal (Día del lanzamiento)</div>
+        <div class="timeline-title">Disparar en todos los canales</div>
+        <div class="timeline-desc">El día del lanzamiento todo debe estar calibrado. Post a las 8am, email a las 10am, pauta activa desde el minuto cero.</div>
+        <ul class="timeline-checklist">
+          <li>Publicación en Instagram, Facebook, TikTok del CC</li>
+          <li>Envío de newsletter a base de suscriptores</li>
+          <li>Difusión por WhatsApp a lista de difusión del CC</li>
+          <li>Pauta digital activa: Meta Ads, Google Ads, TikTok Ads (segmentada Lima Norte)</li>
+          <li>Pantallas del CC: banners de campaña en rotación</li>
+          <li>Locatarios publican en sus propias redes con hashtag de campaña</li>
+          <li>Monitor de campaña: revisar métricas cada 4 horas el primer día</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-phase">Fase 5 · Medición y cierre (1 semana después)</div>
+        <div class="timeline-title">Reporte, aprendizajes y próximos pasos</div>
+        <div class="timeline-desc">Lo que no se mide no existe. Cada campaña debe cerrar con números claros y lecciones para la siguiente.</div>
+        <ul class="timeline-checklist">
+          <li>Reporte de resultados: KPIs vs objetivo (footfall, ventas, engagement, nuevos leads)</li>
+          <li>Encuesta post-campaña a locatarios participantes (satisfacción, ventas, sugerencias)</li>
+          <li>Reunión de cierre con el equipo: ¿qué funcionó? ¿qué no?</li>
+          <li>Documentar aprendizajes en playbook (mejora continua)</li>
+          <li>Publicación de resultados en LinkedIn del CC (transparencia y atracción de nuevas marcas)</li>
+          <li>Plan de nurturing a nuevos leads captados durante la campaña</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>¿Listo para implementar estos playbooks en Plaza Aurora?</h2>
+  <p>Estos procesos se pueden automatizar con herramientas como n8n, Notion, Google Sheets y WhatsApp. El equipo de Futuraria puede ayudarte a montarlo.</p>
+  <a href="https://wa.me/51916510730" class="btn" target="_blank">Hablar con Futuraria →</a>
+</section>
+
+<footer class="footer">
+  <p>Playbooks de Onboarding · <a href="https://plazaaurora.futuraria.com" target="_blank">Plaza Aurora</a> · Desarrollado por <a href="https://futuraria.com" target="_blank">Futuraria</a> · 2026</p>
+</footer>
+
+</body>
+</html>
