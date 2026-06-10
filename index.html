@@ -1,261 +1,140 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Playbooks de Onboarding · Plaza Aurora</title>
-  <meta name="description" content="Playbooks de onboarding para Plaza Aurora: Procesos operativos y automatizaciones internas para equipo, locatarios y marketing.">
-  <style>
-    :root {
-      --pa-gold: #d4a843;
-      --pa-gold-light: #f5e6c8;
-      --pa-navy: #1a1f36;
-      --pa-navy-light: #252b45;
-      --pa-white: #ffffff;
-      --pa-gray-50: #f9fafb;
-      --pa-gray-100: #f3f4f6;
-      --pa-gray-200: #e5e7eb;
-      --pa-gray-400: #9ca3af;
-      --pa-gray-600: #4b5563;
-      --pa-gray-800: #1f2937;
-      --pa-radius: 12px;
-      --pa-transition: 0.2s ease;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-      --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--pa-gray-50);
-      color: var(--pa-gray-800);
-      line-height: 1.6;
-    }
-    /* Nav */
-    .nav {
-      background: var(--pa-navy);
-      padding: 1rem 2rem;
-      position: sticky; top: 0; z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-    .nav-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo {
-      display: flex; align-items: center; gap: 0.75rem;
-      text-decoration: none;
-    }
-    .nav-logo-icon {
-      width: 40px; height: 40px;
-      background: linear-gradient(135deg, var(--pa-gold), #c49530);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--pa-navy); font-weight: 800; font-size: 1.1rem;
-    }
-    .nav-logo-text { color: var(--pa-white); font-weight: 700; font-size: 1.15rem; }
-    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-    .nav-links a { color: var(--pa-gray-400); text-decoration: none; font-size: 0.9rem; transition: color var(--pa-transition); }
-    .nav-links a:hover { color: var(--pa-gold); }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playbooks de Onboarding · Plaza Aurora</title>
+<meta name="description" content="Playbooks de onboarding para Plaza Aurora: Procesos operativos, automatizaciones internas y roles del centro comercial.">
+<style>
+:root {
+  --pa-gold: #d4a843; --pa-gold-light: #f5e6c8; --pa-navy: #1a1f36; --pa-navy-light: #252b45;
+  --pa-white: #fff; --pa-gray-50: #f9fafb; --pa-gray-100: #f3f4f6; --pa-gray-200: #e5e7eb;
+  --pa-gray-400: #9ca3af; --pa-gray-600: #4b5563; --pa-gray-800: #1f2937;
+  --pa-radius: 12px; --pa-transition: 0.2s ease;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.08); --shadow-md: 0 4px 16px rgba(0,0,0,.1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--pa-gray-50);color:var(--pa-gray-800);line-height:1.6}
 
-    /* Hero */
-    .hero {
-      background: linear-gradient(135deg, var(--pa-navy) 0%, #2d3560 100%);
-      color: var(--pa-white); padding: 5rem 2rem; text-align: center;
-      position: relative; overflow: hidden;
-    }
-    .hero::after {
-      content: ''; position: absolute; bottom: -2px; left: 0; right: 0;
-      height: 4px; background: linear-gradient(90deg, var(--pa-gold), #e8c96a, var(--pa-gold));
-    }
-    .hero-badge {
-      display: inline-block; background: rgba(212,168,67,0.2); border: 1px solid var(--pa-gold);
-      color: var(--pa-gold); padding: 0.35rem 1rem; border-radius: 50px;
-      font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem;
-      text-transform: uppercase; letter-spacing: 0.05em;
-    }
-    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
-    .hero p { font-size: 1.15rem; color: var(--pa-gray-400); max-width: 650px; margin: 0 auto; }
+/* Nav */
+.nav{background:var(--pa-navy);padding:1rem 2rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.nav-logo-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--pa-gold),#c49530);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--pa-navy);font-weight:800;font-size:1.1rem}
+.nav-logo-text{color:var(--pa-white);font-weight:700;font-size:1.15rem}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:var(--pa-gray-400);text-decoration:none;font-size:.9rem;transition:color var(--pa-transition);cursor:pointer}
+.nav-links a:hover{color:var(--pa-gold)}
 
-    /* Slider */
-    .slider-wrapper { position: relative; overflow: hidden; }
-    .slider-track { display: flex; transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); will-change: transform; }
-    .slider-panel { min-width: 100%; flex-shrink: 0; }
-    .slider-dots { display: flex; justify-content: center; gap: 0.75rem; padding: 2rem 0; }
-    .slider-dot {
-      width: 12px; height: 12px; border-radius: 50%;
-      background: var(--pa-gray-200); border: none; cursor: pointer;
-      transition: background var(--pa-transition), transform var(--pa-transition);
-    }
-    .slider-dot.active { background: var(--pa-gold); transform: scale(1.3); }
-    .slider-dot:hover { background: var(--pa-gray-400); }
+/* Hero */
+.hero{background:linear-gradient(135deg,var(--pa-navy),#2d3560);color:var(--pa-white);padding:4rem 2rem;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--pa-gold),#e8c96a,var(--pa-gold))}
+.hero-badge{display:inline-block;background:rgba(212,168,67,.2);border:1px solid var(--pa-gold);color:var(--pa-gold);padding:.35rem 1rem;border-radius:50px;font-size:.85rem;font-weight:600;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:.05em}
+.hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:800;line-height:1.2;margin-bottom:.75rem}
+.hero p{font-size:1.1rem;color:var(--pa-gray-400);max-width:650px;margin:0 auto}
 
-    /* Slider Arrows */
-    .slider-arrows { position: absolute; top: 50%; left: 0; right: 0; pointer-events: none; z-index: 10; }
-    .slider-arrow {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      width: 48px; height: 48px; border-radius: 50%;
-      background: var(--pa-white); border: 1px solid var(--pa-gray-200);
-      box-shadow: var(--shadow-md); cursor: pointer; pointer-events: auto;
-      display: flex; align-items: center; justify-content: center;
-      transition: background var(--pa-transition), box-shadow var(--pa-transition);
-      font-size: 1.25rem; color: var(--pa-navy); user-select: none;
-    }
-    .slider-arrow:hover { background: var(--pa-gray-50); box-shadow: 0 6px 24px rgba(0,0,0,0.15); }
-    .slider-arrow--prev { left: 1rem; }
-    .slider-arrow--next { right: 1rem; }
-    @media (max-width: 768px) {
-      .slider-arrow { width: 36px; height: 36px; font-size: 1rem; }
-      .slider-arrow--prev { left: 0.5rem; }
-      .slider-arrow--next { right: 0.5rem; }
-    }
+/* ---- SECTION 1: SLIDER ---- */
+.slider-section{padding:3rem 0 1.5rem}
+.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+.section-header{text-align:center;margin-bottom:2.5rem}
+.section-eyebrow{display:inline-block;color:var(--pa-gold);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem}
+.section-header h2{font-size:1.8rem;font-weight:800;color:var(--pa-navy);margin-bottom:.5rem}
+.section-header p{color:var(--pa-gray-600);max-width:600px;margin:0 auto}
 
-    /* Sections */
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-    .section { padding: 5rem 0; }
-    .section-header { text-align: center; margin-bottom: 3.5rem; }
-    .section-eyebrow {
-      display: inline-block; color: var(--pa-gold); font-weight: 700; font-size: 0.8rem;
-      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem;
-    }
-    .section-header h2 { font-size: 2rem; font-weight: 800; color: var(--pa-navy); margin-bottom: 0.75rem; }
-    .section-header p { color: var(--pa-gray-600); max-width: 600px; margin: 0 auto; }
+.slider-wrapper{position:relative;overflow:hidden}
+.slider-track{display:flex;transition:transform .45s cubic-bezier(.25,.46,.45,.94);will-change:transform}
+.slider-panel{min-width:100%;flex-shrink:0}
 
-    /* Playbook Cards */
-    .playbook-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; }
-    .playbook-card {
-      background: var(--pa-white); border-radius: var(--pa-radius);
-      box-shadow: var(--shadow-sm); overflow: hidden;
-      transition: box-shadow var(--pa-transition), transform var(--pa-transition);
-      border: 1px solid var(--pa-gray-200);
-    }
-    .playbook-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-    .playbook-card-header {
-      padding: 2rem 1.75rem 1.25rem;
-      border-bottom: 1px solid var(--pa-gray-100);
-    }
-    .playbook-number {
-      display: inline-block; width: 36px; height: 36px;
-      background: var(--pa-navy); color: var(--pa-gold); border-radius: 50%;
-      font-weight: 800; font-size: 0.9rem; text-align: center; line-height: 36px;
-      margin-bottom: 0.75rem;
-    }
-    .playbook-card-header h3 { font-size: 1.25rem; color: var(--pa-navy); margin-bottom: 0.35rem; }
-    .playbook-card-header .playbook-subtitle { font-size: 0.85rem; color: var(--pa-gray-600); }
-    .playbook-steps { padding: 1.5rem 1.75rem 2rem; }
-    .playbook-steps ol { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem; }
-    .playbook-steps li { position: relative; padding-left: 2.75rem; }
-    .playbook-steps li::before {
-      content: attr(data-step);
-      position: absolute; left: 0; top: 0;
-      width: 28px; height: 28px;
-      background: var(--pa-gold-light); color: var(--pa-navy);
-      border-radius: 6px; font-size: 0.75rem; font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .playbook-steps .step-title { font-weight: 700; font-size: 0.95rem; color: var(--pa-navy); margin-bottom: 0.15rem; }
-    .playbook-steps .step-desc { font-size: 0.85rem; color: var(--pa-gray-600); line-height: 1.5; }
+.playbook-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem}
+.playbook-card{
+  background:var(--pa-white);border-radius:var(--pa-radius);
+  box-shadow:var(--shadow-sm);overflow:hidden;cursor:pointer;
+  transition:box-shadow var(--pa-transition),transform var(--pa-transition),border-color var(--pa-transition);
+  border:2px solid transparent;
+}
+.playbook-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.playbook-card.selected{border-color:var(--pa-gold);box-shadow:0 0 0 3px rgba(212,168,67,.25),var(--shadow-md)}
+.playbook-card-header{padding:1.75rem 1.5rem 1rem;border-bottom:1px solid var(--pa-gray-100)}
+.playbook-number{display:inline-block;width:32px;height:32px;background:var(--pa-navy);color:var(--pa-gold);border-radius:50%;font-weight:800;font-size:.85rem;text-align:center;line-height:32px;margin-bottom:.5rem}
+.playbook-card-header h3{font-size:1.15rem;color:var(--pa-navy);margin-bottom:.25rem}
+.playbook-subtitle{font-size:.82rem;color:var(--pa-gray-600)}
+.playbook-steps{padding:1.25rem 1.5rem 1.75rem}
+.playbook-steps ol{list-style:none;padding:0;display:flex;flex-direction:column;gap:.75rem}
+.playbook-steps li{position:relative;padding-left:2.5rem}
+.playbook-steps li::before{content:attr(data-step);position:absolute;left:0;top:0;width:26px;height:26px;background:var(--pa-gold-light);color:var(--pa-navy);border-radius:6px;font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.step-title{font-weight:700;font-size:.9rem;color:var(--pa-navy);margin-bottom:.1rem}
+.step-desc{font-size:.8rem;color:var(--pa-gray-600);line-height:1.45}
 
-    /* Platform badge */
-    .playbook-badge {
-      display: inline-block; padding: 0.2rem 0.6rem; border-radius: 4px;
-      font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
-      margin-bottom: 0.5rem;
-    }
-    .playbook-badge--auto { background: #e0f2fe; color: #0369a1; }
-    .playbook-badge--manual { background: var(--pa-gold-light); color: #7a5d00; }
+.playbook-badge{display:inline-block;padding:.15rem .5rem;border-radius:4px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.4rem}
+.playbook-badge--auto{background:#e0f2fe;color:#0369a1}
+.playbook-badge--manual{background:var(--pa-gold-light);color:#7a5d00}
 
-    /* Detailed View */
-    .playbook-detail { background: var(--pa-white); border-radius: var(--pa-radius); box-shadow: var(--shadow-sm); overflow: hidden; margin-top: 1.5rem; }
-    .playbook-detail-header {
-      background: var(--pa-navy); color: var(--pa-white); padding: 2.5rem 2rem;
-      display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
-    }
-    .playbook-detail-icon {
-      width: 72px; height: 72px; background: rgba(212,168,67,0.15);
-      border-radius: 16px; display: flex; align-items: center; justify-content: center;
-      font-size: 2rem;
-    }
-    .playbook-detail-header h3 { font-size: 1.5rem; font-weight: 700; }
-    .playbook-detail-header p { color: var(--pa-gray-400); margin-top: 0.25rem; }
-    .playbook-detail-body { padding: 2.5rem 2rem; }
+/* Slider arrows & dots */
+.slider-dots{display:flex;justify-content:center;gap:.75rem;padding:1.5rem 0 0}
+.slider-dot{width:12px;height:12px;border-radius:50%;background:var(--pa-gray-200);border:none;cursor:pointer;transition:background var(--pa-transition),transform var(--pa-transition)}
+.slider-dot.active{background:var(--pa-gold);transform:scale(1.3)}
+.slider-dot:hover{background:var(--pa-gray-400)}
 
-    /* Timeline */
-    .timeline { position: relative; padding-left: 2rem; }
-    .timeline::before {
-      content: ''; position: absolute; left: 8px; top: 0; bottom: 0;
-      width: 2px; background: var(--pa-gray-200);
-    }
-    .timeline-item { position: relative; margin-bottom: 2rem; padding-left: 1.5rem; }
-    .timeline-item::before {
-      content: ''; position: absolute; left: -1.55rem; top: 0.4rem;
-      width: 12px; height: 12px; border-radius: 50%;
-      background: var(--pa-gold); border: 2px solid var(--pa-white);
-      box-shadow: 0 0 0 2px var(--pa-gold);
-    }
-    .timeline-item:last-child { margin-bottom: 0; }
-    .timeline-phase {
-      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.05em; color: var(--pa-gold); margin-bottom: 0.25rem;
-    }
-    .timeline-title { font-weight: 700; font-size: 1.05rem; color: var(--pa-navy); margin-bottom: 0.35rem; }
-    .timeline-desc { font-size: 0.9rem; color: var(--pa-gray-600); line-height: 1.6; }
-    .timeline-checklist {
-      margin-top: 0.75rem; list-style: none; display: flex; flex-direction: column; gap: 0.4rem;
-    }
-    .timeline-checklist li {
-      font-size: 0.85rem; color: var(--pa-gray-600);
-      padding-left: 1.5rem; position: relative;
-    }
-    .timeline-checklist li::before {
-      content: '☐'; position: absolute; left: 0; color: var(--pa-gray-400);
-      font-size: 0.9rem;
-    }
+.slider-arrows{position:absolute;top:50%;left:0;right:0;pointer-events:none;z-index:10;transform:translateY(-50%)}
+.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:var(--pa-white);border:1px solid var(--pa-gray-200);box-shadow:var(--shadow-md);cursor:pointer;pointer-events:auto;display:flex;align-items:center;justify-content:center;transition:all var(--pa-transition);font-size:1.2rem;color:var(--pa-navy);user-select:none}
+.slider-arrow:hover{background:var(--pa-gray-50);box-shadow:0 6px 24px rgba(0,0,0,.15)}
+.slider-arrow--prev{left:.5rem}
+.slider-arrow--next{right:.5rem}
 
-    /* CTA */
-    .cta-section {
-      background: var(--pa-navy); color: var(--pa-white); padding: 4rem 2rem; text-align: center;
-    }
-    .cta-section h2 { font-size: 1.75rem; margin-bottom: 1rem; }
-    .cta-section p { color: var(--pa-gray-400); margin-bottom: 2rem; }
-    .btn {
-      display: inline-block; padding: 0.85rem 2rem;
-      background: var(--pa-gold); color: var(--pa-navy);
-      font-weight: 700; border-radius: 8px; text-decoration: none;
-      transition: background var(--pa-transition);
-    }
-    .btn:hover { background: #e8c050; }
+/* ---- SECTION 2: MIRROR DETAIL ---- */
+.mirror-section{padding:0 0 5rem}
+.mirror-placeholder{text-align:center;padding:5rem 2rem;color:var(--pa-gray-400)}
+.mirror-placeholder svg{margin-bottom:1.5rem;opacity:.4}
+.mirror-placeholder h3{font-size:1.3rem;color:var(--pa-gray-600);margin-bottom:.5rem}
+.mirror-placeholder p{font-size:.95rem}
 
-    /* Footer */
-    .footer {
-      background: var(--pa-gray-100); padding: 2rem;
-      text-align: center; color: var(--pa-gray-400); font-size: 0.85rem;
-      border-top: 1px solid var(--pa-gray-200);
-    }
-    .footer a { color: var(--pa-navy); text-decoration: none; font-weight: 600; }
+.playbook-detail{background:var(--pa-white);border-radius:var(--pa-radius);box-shadow:var(--shadow-sm);overflow:hidden;animation:fadeIn .35s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.playbook-detail-header{background:var(--pa-navy);color:var(--pa-white);padding:2rem 2rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.playbook-detail-icon{width:64px;height:64px;background:rgba(212,168,67,.15);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.75rem}
+.playbook-detail-header h3{font-size:1.4rem;font-weight:700}
+.playbook-detail-header p{color:var(--pa-gray-400);margin-top:.2rem;font-size:.9rem}
+.playbook-detail-body{padding:2.5rem 2rem}
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav { padding: 0.75rem 1rem; }
-      .nav-links { display: none; }
-      .playbook-detail-header { flex-direction: column; text-align: center; }
-      .slider-arrow--prev { left: 0.25rem; }
-      .slider-arrow--next { right: 0.25rem; }
-    }
-  </style>
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--pa-gray-200)}
+.timeline-item{position:relative;margin-bottom:1.75rem;padding-left:1.5rem}
+.timeline-item::before{content:'';position:absolute;left:-1.55rem;top:.35rem;width:12px;height:12px;border-radius:50%;background:var(--pa-gold);border:2px solid var(--pa-white);box-shadow:0 0 0 2px var(--pa-gold)}
+.timeline-item:last-child{margin-bottom:0}
+.timeline-phase{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--pa-gold);margin-bottom:.2rem}
+.timeline-title{font-weight:700;font-size:1rem;color:var(--pa-navy);margin-bottom:.3rem}
+.timeline-desc{font-size:.88rem;color:var(--pa-gray-600);line-height:1.55;margin-bottom:.6rem}
+.timeline-checklist{margin-top:.5rem;list-style:none;display:flex;flex-direction:column;gap:.35rem}
+.timeline-checklist li{font-size:.83rem;color:var(--pa-gray-600);padding-left:1.4rem;position:relative}
+.timeline-checklist li::before{content:'☐';position:absolute;left:0;color:var(--pa-gray-400);font-size:.85rem}
+
+/* CTA + Footer */
+.cta-section{background:var(--pa-navy);color:var(--pa-white);padding:3rem 2rem;text-align:center}
+.cta-section h2{font-size:1.5rem;margin-bottom:.75rem}
+.cta-section p{color:var(--pa-gray-400);margin-bottom:1.5rem;font-size:.95rem}
+.btn{display:inline-block;padding:.8rem 1.8rem;background:var(--pa-gold);color:var(--pa-navy);font-weight:700;border-radius:8px;text-decoration:none;transition:background var(--pa-transition)}
+.btn:hover{background:#e8c050}
+.footer{background:var(--pa-gray-100);padding:2rem;text-align:center;color:var(--pa-gray-400);font-size:.85rem;border-top:1px solid var(--pa-gray-200)}
+.footer a{color:var(--pa-navy);text-decoration:none;font-weight:600}
+
+@media(max-width:768px){
+  .nav{padding:.75rem 1rem}.nav-links{display:none}
+  .playbook-detail-header{flex-direction:column;text-align:center}
+  .slider-arrow{width:36px;height:36px;font-size:1rem}
+  .slider-arrow--prev{left:.25rem}.slider-arrow--next{right:.25rem}
+}
+</style>
 </head>
 <body>
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">
-      <div class="nav-logo-icon">PA</div>
-      <span class="nav-logo-text">Plaza Aurora</span>
-    </a>
+    <a href="#" class="nav-logo"><div class="nav-logo-icon">PA</div><span class="nav-logo-text">Plaza Aurora</span></a>
     <ul class="nav-links">
-      <li><a href="#" onclick="goToSlide(0);return false">Operativos</a></li>
-      <li><a href="#" onclick="goToSlide(1);return false">Plataforma</a></li>
-      <li><a href="#" onclick="goToSlide(2);return false">Personal</a></li>
+      <li><a onclick="goToSlide(0)">Operativos</a></li>
+      <li><a onclick="goToSlide(1)">Plataforma</a></li>
+      <li><a onclick="goToSlide(2)">Personal</a></li>
     </ul>
   </div>
 </nav>
@@ -263,728 +142,631 @@
 <header class="hero">
   <span class="hero-badge">Sistema de Onboarding</span>
   <h1>Playbooks de Onboarding<br>Plaza Aurora</h1>
-  <p>Metodologías probadas para incorporar equipo, locatarios y campañas. Playbooks operativos para líderes + automatizaciones internas para ejecución sin fricción.</p>
+  <p>Metodologías para incorporar equipo, locatarios y campañas. Playbooks operativos para líderes + automatizaciones internas.</p>
 </header>
 
-<!-- ====== SLIDER ====== -->
-<div class="slider-wrapper" id="sliderWrapper">
-  <div class="slider-track" id="sliderTrack">
+<!-- ====== SECTION 1: SLIDER (CARDS ONLY) ====== -->
+<section class="slider-section" id="cards-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Playbooks · 9 metodologías</span>
+      <h2>Selecciona un playbook para ver su detalle</h2>
+      <p>Haz clic en cualquier tarjeta. El detalle completo aparecerá abajo.</p>
+    </div>
+  </div>
+  <div class="slider-wrapper" id="sliderWrapper">
+    <div class="slider-track" id="sliderTrack">
 
-    <!-- PANEL 1: Playbooks Operativos -->
-    <div class="slider-panel" id="panel-operativos">
-      <section class="section">
+      <!-- PANEL 1: Operativos (3 cards) -->
+      <div class="slider-panel">
         <div class="container">
-          <div class="section-header">
-            <span class="section-eyebrow">Playbooks Operativos</span>
-            <h2>3 Metodologías para Líderes</h2>
-            <p>Playbooks que el equipo de Plaza Aurora usa para liderar procesos de onboarding. Basados en prácticas de centros comerciales.</p>
-          </div>
           <div class="playbook-grid">
-            <div class="playbook-card">
+            <div class="playbook-card" onclick="showDetail(1)" id="card-1">
               <div class="playbook-card-header">
                 <div class="playbook-number">1</div>
                 <h3>Bienvenida de Equipo</h3>
                 <p class="playbook-subtitle">30 · 60 · 90 días para nuevo talento</p>
               </div>
-              <div class="playbook-steps">
-                <ol>
-                  <li data-step="1"><span class="step-title">Pre-boarding</span><span class="step-desc">Documentación, accesos y kit de bienvenida antes del día 1</span></li>
-                  <li data-step="2"><span class="step-title">Semana 1: Inmersión</span><span class="step-desc">Recorrido por el CC, conocer al equipo, herramientas</span></li>
-                  <li data-step="3"><span class="step-title">Día 30: Autonomía</span><span class="step-desc">Primera revisión, manejo de procesos y CRM</span></li>
-                  <li data-step="4"><span class="step-title">Día 60: Proyectos</span><span class="step-desc">Lidera iniciativa pequeña, feedback estructurado</span></li>
-                  <li data-step="5"><span class="step-title">Día 90: Integración</span><span class="step-desc">Evaluación final, OKRs, plan de crecimiento</span></li>
-                </ol>
-              </div>
+              <div class="playbook-steps"><ol>
+                <li data-step="1"><span class="step-title">Pre-boarding</span><span class="step-desc">Documentación, accesos y kit antes del día 1</span></li>
+                <li data-step="2"><span class="step-title">Semana 1: Inmersión</span><span class="step-desc">Recorrido, equipo, herramientas</span></li>
+                <li data-step="3"><span class="step-title">Día 30: Autonomía</span><span class="step-desc">Primera revisión, CRM, procesos</span></li>
+                <li data-step="4"><span class="step-title">Día 60: Proyectos</span><span class="step-desc">Lidera iniciativa, feedback</span></li>
+                <li data-step="5"><span class="step-title">Día 90: Integración</span><span class="step-desc">OKRs, plan de crecimiento</span></li>
+              </ol></div>
             </div>
-            <div class="playbook-card">
+            <div class="playbook-card" onclick="showDetail(2)" id="card-2">
               <div class="playbook-card-header">
                 <div class="playbook-number">2</div>
-                <h3>Incorporación de Locatarios</h3>
+                <h3>Locatarios</h3>
                 <p class="playbook-subtitle">Nuevas marcas al centro comercial</p>
               </div>
-              <div class="playbook-steps">
-                <ol>
-                  <li data-step="1"><span class="step-title">Contrato y docs</span><span class="step-desc">Firma, garantías, seguros, planos y permisos</span></li>
-                  <li data-step="2"><span class="step-title">Adecuación del local</span><span class="step-desc">Obra civil, instalaciones, supervisión de estándares</span></li>
-                  <li data-step="3"><span class="step-title">Branding y señalética</span><span class="step-desc">Letrero, vitrinas, uniformes y material POP</span></li>
-                  <li data-step="4"><span class="step-title">Capacitación de personal</span><span class="step-desc">Normas del CC, seguridad, atención al cliente</span></li>
-                  <li data-step="5"><span class="step-title">Inauguración</span><span class="step-desc">Evento de apertura, difusión en redes del CC</span></li>
-                </ol>
-              </div>
+              <div class="playbook-steps"><ol>
+                <li data-step="1"><span class="step-title">Contrato y docs</span><span class="step-desc">Firma, garantías, planos, permisos</span></li>
+                <li data-step="2"><span class="step-title">Adecuación</span><span class="step-desc">Obra civil, instalaciones, estándares</span></li>
+                <li data-step="3"><span class="step-title">Branding</span><span class="step-desc">Letrero, vitrinas, uniformes, POP</span></li>
+                <li data-step="4"><span class="step-title">Capacitación</span><span class="step-desc">Normas CC, seguridad, atención</span></li>
+                <li data-step="5"><span class="step-title">Inauguración</span><span class="step-desc">Evento apertura, difusión en redes</span></li>
+              </ol></div>
             </div>
-            <div class="playbook-card">
+            <div class="playbook-card" onclick="showDetail(3)" id="card-3">
               <div class="playbook-card-header">
                 <div class="playbook-number">3</div>
-                <h3>Lanzamiento de Campañas</h3>
-                <p class="playbook-subtitle">Marketing campaigns & eventos</p>
+                <h3>Campañas de Marketing</h3>
+                <p class="playbook-subtitle">Lanzamiento de campañas y eventos</p>
               </div>
-              <div class="playbook-steps">
-                <ol>
-                  <li data-step="1"><span class="step-title">Brief y objetivo</span><span class="step-desc">KPIs, audiencia, presupuesto y fechas clave</span></li>
-                  <li data-step="2"><span class="step-title">Creatividad y assets</span><span class="step-desc">Piezas gráficas, copy, landing, material audiovisual</span></li>
-                  <li data-step="3"><span class="step-title">Coord. con locatarios</span><span class="step-desc">Comunicar campaña, obtener participación y ofertas</span></li>
-                  <li data-step="4"><span class="step-title">Ejecución multicanal</span><span class="step-desc">Email, RRSS, WhatsApp, pauta, pantallas del CC</span></li>
-                  <li data-step="5"><span class="step-title">Medición y cierre</span><span class="step-desc">Reporte de KPIs, aprendizajes, feedback</span></li>
-                </ol>
-              </div>
+              <div class="playbook-steps"><ol>
+                <li data-step="1"><span class="step-title">Brief y objetivo</span><span class="step-desc">KPIs, audiencia, presupuesto, fechas</span></li>
+                <li data-step="2"><span class="step-title">Creatividad y assets</span><span class="step-desc">Gráficas, copy, landing, video</span></li>
+                <li data-step="3"><span class="step-title">Coord. locatarios</span><span class="step-desc">Comunicar, obtener ofertas</span></li>
+                <li data-step="4"><span class="step-title">Ejecución multicanal</span><span class="step-desc">Email, RRSS, WhatsApp, pauta</span></li>
+                <li data-step="5"><span class="step-title">Medición</span><span class="step-desc">Reporte KPIs, aprendizajes</span></li>
+              </ol></div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <!-- Detailed: Bienvenida -->
-      <section class="section" style="background: var(--pa-white);">
+      <!-- PANEL 2: Plataforma (2 cards) -->
+      <div class="slider-panel">
         <div class="container">
-          <div class="section-header">
-            <span class="section-eyebrow">Detalle · Playbook 1</span>
-            <h2>Bienvenida de Equipo (30·60·90)</h2>
-            <p>Basado en el modelo de onboarding estructurado para retail y centros comerciales. Cada nueva persona se vuelve productiva y autónoma en 90 días.</p>
-          </div>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-phase">Pre-boarding · Antes del día 1</div>
-              <div class="timeline-title">Preparación y documentación</div>
-              <div class="timeline-desc">Todo listo para que la persona arranque sin fricción desde el minuto cero.</div>
-              <ul class="timeline-checklist">
-                <li>Contrato firmado y enviado a contabilidad</li>
-                <li>Creación de correo corporativo (@plazaaurora.com)</li>
-                <li>Accesos: CRM, Google Drive, Slack/WhatsApp, calendario</li>
-                <li>Kit de bienvenida: manual del empleado, croquis del CC, directorio</li>
-                <li>Asignación de buddy/mentor</li>
-                <li>Agenda de primera semana enviada por correo</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">Semana 1 · Inmersión</div>
-              <div class="timeline-title">Conocer el terreno y las personas</div>
-              <div class="timeline-desc">100% conocer: el espacio, las personas, la cultura y los procesos. Cero presión de output.</div>
-              <ul class="timeline-checklist">
-                <li>Recorrido completo por el CC (locales, accesos, estacionamiento, eventos)</li>
-                <li>Presentación con cada jefe de área y locatarios clave</li>
-                <li>Sesión de marca: historia, misión, valores, tono de comunicación</li>
-                <li>Training de herramientas: CRM, calendario de eventos, sistema de tickets</li>
-                <li>Almuerzo de bienvenida con el equipo directo</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">Día 30 · Autonomía inicial</div>
-              <div class="timeline-title">Primera revisión y manejo básico de procesos</div>
-              <div class="timeline-desc">Ya conoce la operación diaria. Resuelve tareas sin supervisión constante.</div>
-              <ul class="timeline-checklist">
-                <li>Revisión 1:1 con jefe directo</li>
-                <li>Maneja solo(a) el CRM y calendario de eventos</li>
-                <li>Comunicación directa con al menos 5 locatarios</li>
-                <li>Participó en al menos 1 evento o campaña</li>
-                <li>Feedback escrito del buddy/mentor</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">Día 60 · Proyectos reales</div>
-              <div class="timeline-title">Liderazgo de iniciativas pequeñas</div>
-              <div class="timeline-desc">De observador a ejecutor. Toma ownership de un proyecto pequeño pero real.</div>
-              <ul class="timeline-checklist">
-                <li>Lidera una mini-campaña o evento pequeño</li>
-                <li>Revisión de desempeño con KPIs medibles</li>
-                <li>Identifica oportunidades de mejora en su área</li>
-                <li>Sesión de feedback 360° con el equipo</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">Día 90 · Integración total</div>
-              <div class="timeline-title">Miembro pleno del equipo</div>
-              <div class="timeline-desc">Totalmente integrado(a). Conoce los procesos, tiene relaciones y genera resultados.</div>
-              <ul class="timeline-checklist">
-                <li>Evaluación final de onboarding</li>
-                <li>Definición de OKRs para el año</li>
-                <li>Plan de crecimiento: capacitaciones, cursos</li>
-                <li>Ceremonia de cierre: reconocimiento del equipo</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div><!-- /panel-operativos -->
-
-    <!-- PANEL 2: Playbooks Plataforma -->
-    <div class="slider-panel" id="panel-plataforma">
-      <section class="section">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-eyebrow">Playbooks Plataforma</span>
-            <h2>2 Automatizaciones Internas</h2>
-            <p>Lo que el sistema de Plaza Aurora hace automáticamente cuando alguien nuevo entra. Workflows que se ejecutan solos, sin depender de que alguien se acuerde.</p>
-          </div>
           <div class="playbook-grid">
-
-            <!-- Card: Marketing + Agencias -->
-            <div class="playbook-card">
+            <div class="playbook-card" onclick="showDetail(4)" id="card-4">
               <div class="playbook-card-header">
                 <span class="playbook-badge playbook-badge--auto">Automatizado</span>
                 <div class="playbook-number">4</div>
-                <h3>Onboarding de Marketing y Agencias</h3>
-                <p class="playbook-subtitle">Flujo automático cuando se suma alguien al equipo de marketing o una agencia externa</p>
+                <h3>Marketing y Agencias</h3>
+                <p class="playbook-subtitle">Flujo automático para nuevo talento de marketing o agencias externas</p>
               </div>
-              <div class="playbook-steps">
-                <ol>
-                  <li data-step="1"><span class="step-title">Bienvenida al proyecto</span><span class="step-desc">Mensaje automático con accesos a todas las herramientas (CRM, Drive, Slack, calendario)</span></li>
-                  <li data-step="2"><span class="step-title">Verificación de acceso</span><span class="step-desc">Sistema revisa si entró en los siguientes 3 días. Si no, envía recordatorio.</span></li>
-                  <li data-step="3"><span class="step-title">WhatsApp de bienvenida</span><span class="step-desc">Saludo personalizado + datos de acceso + fecha límite para completar perfil</span></li>
-                  <li data-step="4"><span class="step-title">Email con videotutorial</span><span class="step-desc">1 hora después de completar datos, se envía video explicativo de herramientas y procesos</span></li>
-                  <li data-step="5"><span class="step-title">Cita de alineación (managers)</span><span class="step-desc">Cal.com para agendar 20 min: conocernos, alinear objetivos, resolver dudas pendientes</span></li>
-                </ol>
-              </div>
+              <div class="playbook-steps"><ol>
+                <li data-step="1"><span class="step-title">Bienvenida al proyecto</span><span class="step-desc">Mensaje automático con accesos a todas las herramientas</span></li>
+                <li data-step="2"><span class="step-title">Verificación de acceso</span><span class="step-desc">Sistema revisa login en 3 días. Si no, envía recordatorio.</span></li>
+                <li data-step="3"><span class="step-title">WhatsApp de bienvenida</span><span class="step-desc">Saludo + datos de acceso + fecha límite para perfil</span></li>
+                <li data-step="4"><span class="step-title">Email con videotutorial</span><span class="step-desc">1h después de completar datos: video de herramientas</span></li>
+                <li data-step="5"><span class="step-title">Cita de alineación</span><span class="step-desc">Managers: Cal.com para 20min de objetivos y dudas</span></li>
+              </ol></div>
             </div>
-
-            <!-- Card: Locatarios Sistema Interno -->
-            <div class="playbook-card">
+            <div class="playbook-card" onclick="showDetail(5)" id="card-5">
               <div class="playbook-card-header">
                 <span class="playbook-badge playbook-badge--auto">Automatizado</span>
                 <div class="playbook-number">5</div>
-                <h3>Onboarding de Locatarios (Sistema)</h3>
-                <p class="playbook-subtitle">Lo que el sistema hace por dentro cuando un nuevo local entra al centro comercial</p>
+                <h3>Locatarios (Sistema)</h3>
+                <p class="playbook-subtitle">Lo que el sistema ejecuta solo cuando entra un nuevo local</p>
               </div>
-              <div class="playbook-steps">
-                <ol>
-                  <li data-step="1"><span class="step-title">Alta en el sistema</span><span class="step-desc">Registro en CRM, carpeta en Drive con toda la documentación del local</span></li>
-                  <li data-step="2"><span class="step-title">Notificación al locatario</span><span class="step-desc">WhatsApp automático con kit de bienvenida + plazos de permisos y documentos</span></li>
-                  <li data-step="3"><span class="step-title">Tracking de fases</span><span class="step-desc">Recordatorios automáticos en cada fase: docs legales, obra, branding, capacitación, lanzamiento</span></li>
-                  <li data-step="4"><span class="step-title">Checklist digital</span><span class="step-desc">El locatario ve su progreso y pendientes en tiempo real vía enlace compartido</span></li>
-                  <li data-step="5"><span class="step-title">Encuesta post-apertura</span><span class="step-desc">30 días después de inaugurar, se envía encuesta de satisfacción automática</span></li>
-                </ol>
-              </div>
+              <div class="playbook-steps"><ol>
+                <li data-step="1"><span class="step-title">Alta en el sistema</span><span class="step-desc">CRM, carpeta Drive con toda la documentación</span></li>
+                <li data-step="2"><span class="step-title">Notificación al locatario</span><span class="step-desc">WhatsApp con kit + plazos de permisos y docs</span></li>
+                <li data-step="3"><span class="step-title">Tracking de fases</span><span class="step-desc">Recordatorios automáticos en cada fase</span></li>
+                <li data-step="4"><span class="step-title">Checklist digital</span><span class="step-desc">Progreso en tiempo real vía enlace compartido</span></li>
+                <li data-step="5"><span class="step-title">Encuesta post-apertura</span><span class="step-desc">30 días después: satisfacción automática</span></li>
+              </ol></div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <!-- Detailed: Marketing + Agencias -->
-      <section class="section" style="background: var(--pa-white);">
+      <!-- PANEL 3: Personal (4 cards) -->
+      <div class="slider-panel">
         <div class="container">
-          <div class="section-header">
-            <span class="section-eyebrow">Detalle · Playbook 4</span>
-            <h2>Onboarding de Marketing y Agencias</h2>
-            <p>Workflow automatizado que se dispara cuando una persona de marketing o una agencia externa se suma al equipo de Plaza Aurora. Todo ocurre sin intervención manual.</p>
-          </div>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-phase">Día 0 · Entrada al sistema</div>
-              <div class="timeline-title">Mensaje de bienvenida al proyecto</div>
-              <div class="timeline-desc">Al agregar a la persona al sistema (CRM o Google Workspace), se dispara el workflow automáticamente.</div>
-              <ul class="timeline-checklist">
-                <li>Email de bienvenida con: presentación del equipo, objetivos del CC, tono de comunicación</li>
-                <li>Accesos generados automáticamente: Google Drive (carpeta de marketing), Slack/WhatsApp grupal, calendario editorial</li>
-                <li>Invitación a Notion con guía de marca: logotipos, paleta de colores, tipografías, tamaños de imagen, formatos de video</li>
-                <li>Credenciales temporales con vigencia de 7 días (fuerzan el primer login)</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">Día +1 a +3 · Verificación</div>
-              <div class="timeline-title">¿Ya entró? Verificación de acceso</div>
-              <div class="timeline-desc">El sistema monitorea si la persona inició sesión en las herramientas. Si no lo hace en 3 días, escala.</div>
-              <ul class="timeline-checklist">
-                <li>Día 1: verificación silenciosa de login en Google Workspace y CRM</li>
-                <li>Día 2: si no entró → recordatorio automático por email</li>
-                <li>Día 3: si sigue sin entrar → WhatsApp al manager directo: "Fulanita aún no ha activado sus accesos"</li>
-                <li>Registro en dashboard interno: % de onboardings completados vs pendientes</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">Inmediato · Al verificar acceso</div>
-              <div class="timeline-title">WhatsApp de bienvenida personalizado</div>
-              <div class="timeline-desc">Una vez que el sistema detecta el primer login, envía un WhatsApp automático con todo lo necesario.</div>
-              <ul class="timeline-checklist">
-                <li>"¡Hola [Nombre]! Bienvenida al equipo de Plaza Aurora 🎉"</li>
-                <li>Resumen de accesos: links directos a Drive, calendario, CRM, grupo de WhatsApp</li>
-                <li>Fecha límite para completar perfil: "Tienes hasta el [fecha] para revisar los materiales"</li>
-                <li>Link al videotutorial que se enviará en 1 hora</li>
-                <li>Frase de cierre cálida: "Cualquier duda, responde a este mensaje y te contactamos"</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">+1 hora · Después del WhatsApp</div>
-              <div class="timeline-title">Email con videotutorial</div>
-              <div class="timeline-desc">Una hora después del mensaje de WhatsApp, el sistema envía un correo con contenido formativo. Tiempo suficiente para que la persona se tome un café y se ponga cómoda.</div>
-              <ul class="timeline-checklist">
-                <li>Video tutorial de 5-7 min: recorrido por las herramientas y procesos clave</li>
-                <li>Incluye: cómo usar el calendario editorial, cómo subir contenido, flujo de aprobaciones</li>
-                <li>PDF descargable con resumen de 1 página (para tener a mano)</li>
-                <li>Link a canal de Slack/WhatsApp para preguntas rápidas</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">+48 horas · Solo para managers</div>
-              <div class="timeline-title">Cita de alineación (20 min)</div>
-              <div class="timeline-desc">Si la persona tiene rol de manager o liderazgo, se agenda una videollamada breve para conocerse y resolver dudas.</div>
-              <ul class="timeline-checklist">
-                <li>Link de Cal.com para agendar: "Alineación de objetivos · 20 min"</li>
-                <li>Agenda sugerida: 5 min presentación personal, 10 min revisar objetivos del trimestre, 5 min dudas</li>
-                <li>Tono casual, no es evaluación: es para conocerse y asegurar que todo esté claro</li>
-                <li>Si no agenda en 5 días → recordatorio automático</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">Caso especial · Agencias</div>
-              <div class="timeline-title">Playbook para Agencias (no empleados)</div>
-              <div class="timeline-desc">Las agencias externas no son personal interno. El tono es más estratégico y colaborativo, no de "entrenamiento". Se asume que saben hacer su trabajo.</div>
-              <ul class="timeline-checklist">
-                <li>Mensaje de bienvenida con tono de partnership: "Estamos felices de colaborar con ustedes"</li>
-                <li>Kit de marca completo en Notion: guía de estilo, paleta de colores, tipografías, variaciones de logo</li>
-                <li>Especificaciones técnicas: tamaños de imagen por canal, formatos de video, pesos máximos, slugs permitidos</li>
-                <li>Calendario editorial compartido (solo lectura) + proceso de aprobación de piezas</li>
-                <li>Contacto directo: quién aprueba qué y en qué plazo (SLA de respuesta: 24h hábiles)</li>
-                <li>Reunión inicial de 30 min: alineación estratégica, no táctica. Visión, objetivos del trimestre, tono.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Detailed: Locatarios (Sistema) -->
-      <section class="section">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-eyebrow">Detalle · Playbook 5</span>
-            <h2>Onboarding de Locatarios (Sistema Interno)</h2>
-            <p>La contraparte automatizada del playbook operativo. Lo que el sistema ejecuta solo para que ningún local se quede sin seguimiento.</p>
-          </div>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-phase">Gatillo · Firma de contrato</div>
-              <div class="timeline-title">Alta automática en el sistema</div>
-              <div class="timeline-desc">Cuando el contrato se marca como firmado en el CRM, todo lo demás se dispara solo.</div>
-              <ul class="timeline-checklist">
-                <li>Registro del locatario en CRM: razón social, RUC, contacto, categoría, local asignado</li>
-                <li>Creación automática de carpeta en Drive: documentos legales, planos, brief de marca, fotos</li>
-                <li>Asignación de fechas estimadas para cada fase (basado en contrato)</li>
-                <li>Notificación al equipo interno: "Nuevo locatario: [Marca] — fecha estimada de apertura: [fecha]"</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">Inmediato · Comunicación</div>
-              <div class="timeline-title">Notificación y kit de bienvenida al locatario</div>
-              <div class="timeline-desc">El locatario recibe todo lo que necesita sin tener que perseguir a nadie.</div>
-              <ul class="timeline-checklist">
-                <li>WhatsApp automático: "¡Bienvenido a Plaza Aurora, [Marca]! Aquí todo lo que necesitas para tu apertura"</li>
-                <li>PDF del kit de bienvenida: croquis del CC, normas, contactos clave, cronograma</li>
-                <li>Fechas límite claras para cada entregable (permisos, planos, letrero)</li>
-                <li>Link al checklist digital donde verá su progreso en tiempo real</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">Continuo · Seguimiento</div>
-              <div class="timeline-title">Tracking de fases con recordatorios</div>
-              <div class="timeline-desc">El sistema monitorea cada fase y envía recordatorios automáticos. Nadie tiene que acordarse.</div>
-              <ul class="timeline-checklist">
-                <li>Fase 1 (Docs legales): recordatorio 7 días y 3 días antes del deadline</li>
-                <li>Fase 2 (Obra): check-in semanal automático por WhatsApp ("¿Cómo va la obra?")</li>
-                <li>Fase 3 (Branding): notificación cuando el diseño de letrero está pendiente de aprobación</li>
-                <li>Fase 4 (Capacitación): invitación automática a la sesión de inducción cuando la obra llega al 80%</li>
-                <li>Fase 5 (Inauguración): coordinación automática de fecha con el calendario del CC</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">En tiempo real · Visibilidad</div>
-              <div class="timeline-title">Checklist digital para el locatario</div>
-              <div class="timeline-desc">Un enlace compartido (Google Sheets o Notion) donde el locatario ve exactamente qué falta y qué está completo.</div>
-              <ul class="timeline-checklist">
-                <li>Visualización tipo progreso: barra de % completado</li>
-                <li>Ítems marcados como ✅ por el CC cuando reciben aprobación</li>
-                <li>Comentarios en cada ítem: qué falta exactamente, quién lo revisa</li>
-                <li>El locatario puede subir archivos directamente (planos, seguros, fotos de avance)</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">+30 días post-apertura</div>
-              <div class="timeline-title">Encuesta de satisfacción automática</div>
-              <div class="timeline-desc">Un mes después de la inauguración, el sistema envía una encuesta para medir la experiencia del locatario.</div>
-              <ul class="timeline-checklist">
-                <li>Encuesta breve (5 preguntas): satisfacción general, claridad del proceso, comunicación, sugerencias</li>
-                <li>Resultados se registran en el perfil del locatario en CRM</li>
-                <li>Si puntuación < 3/5 → alerta al gerente del CC para follow-up personal</li>
-                <li>Datos alimentan mejora continua del playbook</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div><!-- /panel-plataforma -->
-
-    <!-- PANEL 3: Playbooks Personal -->
-    <div class="slider-panel" id="panel-personal">
-      <section class="section">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-eyebrow">Playbooks Personal</span>
-            <h2>4 Roles Operativos</h2>
-            <p>Onboarding estructurado para los roles que mantienen el centro comercial funcionando día a día. Checklists prácticos con tiempos y responsables.</p>
-          </div>
           <div class="playbook-grid">
-
-            <!-- Card: Limpieza -->
-            <div class="playbook-card">
+            <div class="playbook-card" onclick="showDetail(6)" id="card-6">
               <div class="playbook-card-header">
                 <span class="playbook-badge playbook-badge--manual">Presencial</span>
                 <div class="playbook-number">6</div>
                 <h3>Personal de Limpieza</h3>
-                <p class="playbook-subtitle">Columna vertebral de la experiencia del visitante</p>
+                <p class="playbook-subtitle">Experiencia del visitante, higiene y seguridad</p>
               </div>
-              <div class="playbook-steps">
-                <ol>
-                  <li data-step="1"><span class="step-title">Pre-ingreso</span><span class="step-desc">Contrato, examen médico, antecedentes, uniforme, EPP, mentor asignado</span></li>
-                  <li data-step="2"><span class="step-title">Día 1 · Inducción</span><span class="step-desc">Recorrido completo, entrega de herramientas, técnicas de barrido, segregación de residuos</span></li>
-                  <li data-step="3"><span class="step-title">Semana 1 · Formación</span><span class="step-desc">Manejo de químicos, operación de máquinas, derrames, limpieza nocturna</span></li>
-                  <li data-step="4"><span class="step-title">Mes 1 · Consolidación</span><span class="step-desc">Zona fija, limpieza profunda, control de plagas, atención al cliente básica</span></li>
-                  <li data-step="5"><span class="step-title">Certificaciones</span><span class="step-desc">Productos químicos, trabajo en alturas, primeros auxilios (Ley 29783)</span></li>
-                </ol>
-              </div>
+              <div class="playbook-steps"><ol>
+                <li data-step="1"><span class="step-title">Pre-ingreso</span><span class="step-desc">Contrato, examen médico, antecedentes, EPP</span></li>
+                <li data-step="2"><span class="step-title">Día 1 · Inducción</span><span class="step-desc">Recorrido, herramientas, técnicas básicas</span></li>
+                <li data-step="3"><span class="step-title">Semana 1 · Formación</span><span class="step-desc">Químicos, máquinas, derrames, horario nocturno</span></li>
+                <li data-step="4"><span class="step-title">Mes 1 · Consolidación</span><span class="step-desc">Zona fija, limpieza profunda, control plagas</span></li>
+                <li data-step="5"><span class="step-title">Certificaciones</span><span class="step-desc">Químicos, alturas, primeros auxilios (Ley 29783)</span></li>
+              </ol></div>
             </div>
-
-            <!-- Card: Analistas -->
-            <div class="playbook-card">
+            <div class="playbook-card" onclick="showDetail(7)" id="card-7">
               <div class="playbook-card-header">
                 <span class="playbook-badge playbook-badge--manual">Híbrido</span>
                 <div class="playbook-number">7</div>
                 <h3>Analistas</h3>
                 <p class="playbook-subtitle">Financiero, marketing y operaciones</p>
               </div>
-              <div class="playbook-steps">
-                <ol>
-                  <li data-step="1"><span class="step-title">Día 1 · Inmersión</span><span class="step-desc">Acceso a sistemas, bases de datos, dashboards. Reunión con jefe de área.</span></li>
-                  <li data-step="2"><span class="step-title">Semana 1 · Diagnóstico</span><span class="step-desc">Revisión de reportes históricos, entender KPIs, mapear fuentes de datos</span></li>
-                  <li data-step="3"><span class="step-title">Semana 2-3 · Track específico</span><span class="step-desc">Por especialidad: modelos financieros / métricas de campañas / eficiencia operativa</span></li>
-                  <li data-step="4"><span class="step-title">Mes 1 · Autonomía</span><span class="step-desc">Primer reporte completo + presentación de hallazgos al equipo</span></li>
-                  <li data-step="5"><span class="step-title">Confidencialidad</span><span class="step-desc">Firma de NDA, protocolo de datos sensibles, acceso por niveles</span></li>
-                </ol>
-              </div>
+              <div class="playbook-steps"><ol>
+                <li data-step="1"><span class="step-title">Día 1 · Inmersión</span><span class="step-desc">Sistemas, bases de datos, dashboards, jefe de área</span></li>
+                <li data-step="2"><span class="step-title">Semana 1 · Diagnóstico</span><span class="step-desc">Reportes históricos, KPIs, fuentes de datos</span></li>
+                <li data-step="3"><span class="step-title">Track específico</span><span class="step-desc">Modelos financieros / métricas / eficiencia operativa</span></li>
+                <li data-step="4"><span class="step-title">Mes 1 · Autonomía</span><span class="step-desc">Primer reporte + presentación de hallazgos</span></li>
+                <li data-step="5"><span class="step-title">Confidencialidad</span><span class="step-desc">NDA, datos sensibles, acceso por niveles</span></li>
+              </ol></div>
             </div>
-
-            <!-- Card: Administradores -->
-            <div class="playbook-card">
+            <div class="playbook-card" onclick="showDetail(8)" id="card-8">
               <div class="playbook-card-header">
                 <span class="playbook-badge playbook-badge--manual">Presencial</span>
                 <div class="playbook-number">8</div>
                 <h3>Administradores</h3>
                 <p class="playbook-subtitle">Oficinas, logística y operación diaria</p>
               </div>
-              <div class="playbook-steps">
-                <ol>
-                  <li data-step="1"><span class="step-title">Día 1 · Recorrido BOH</span><span class="step-desc">Back of house: almacenes, cuarto de máquinas, accesos de servicio, muelles de carga</span></li>
-                  <li data-step="2"><span class="step-title">Semana 1 · Procesos</span><span class="step-desc">Contratos, facturación a locatarios, gestión de proveedores, órdenes de compra</span></li>
-                  <li data-step="3"><span class="step-title">Semana 2 · Sistemas</span><span class="step-desc">ERP, CRM, control de accesos, CCTV, sistema de tickets de mantenimiento</span></li>
-                  <li data-step="4"><span class="step-title">Mes 1 · Autonomía</span><span class="step-desc">Manejo solo(a) de apertura/cierre, relación con locatarios, reportes</span></li>
-                  <li data-step="5"><span class="step-title">Emergencias</span><span class="step-desc">Protocolo de evacuación, simulacros, manejo de crisis, vocería autorizada</span></li>
-                </ol>
-              </div>
+              <div class="playbook-steps"><ol>
+                <li data-step="1"><span class="step-title">Día 1 · Recorrido BOH</span><span class="step-desc">Back of house, muelles, accesos de servicio</span></li>
+                <li data-step="2"><span class="step-title">Semana 1 · Procesos</span><span class="step-desc">Contratos, facturación, proveedores, órdenes</span></li>
+                <li data-step="3"><span class="step-title">Semana 2 · Sistemas</span><span class="step-desc">ERP, CRM, CCTV, tickets mantenimiento</span></li>
+                <li data-step="4"><span class="step-title">Mes 1 · Autonomía</span><span class="step-desc">Apertura/cierre, locatarios, reportes</span></li>
+                <li data-step="5"><span class="step-title">Emergencias</span><span class="step-desc">Evacuación, simulacros, manejo de crisis</span></li>
+              </ol></div>
             </div>
-
-            <!-- Card: Contador -->
-            <div class="playbook-card">
+            <div class="playbook-card" onclick="showDetail(9)" id="card-9">
               <div class="playbook-card-header">
                 <span class="playbook-badge playbook-badge--manual">Híbrido</span>
                 <div class="playbook-number">9</div>
                 <h3>Contador</h3>
                 <p class="playbook-subtitle">Finanzas, impuestos y cumplimiento fiscal</p>
               </div>
-              <div class="playbook-steps">
-                <ol>
-                  <li data-step="1"><span class="step-title">Día 1 · Traspaso</span><span class="step-desc">Acceso a sistema contable, plan de cuentas, estados financieros históricos</span></li>
-                  <li data-step="2"><span class="step-title">Semana 1 · Estructura fiscal</span><span class="step-desc">Régimen tributario, impuestos mensuales, retenciones, detracciones, IGV, Renta</span></li>
-                  <li data-step="3"><span class="step-title">Semana 2 · Centros de costo</span><span class="step-desc">Prorrateo de gastos comunes, fondo de promoción, mantenimiento, consumo eléctrico</span></li>
-                  <li data-step="4"><span class="step-title">Mes 1 · Cierre contable</span><span class="step-desc">Primer cierre completo con supervisión, presentación a gerencia</span></li>
-                  <li data-step="5"><span class="step-title">Calendario fiscal</span><span class="step-desc">PDT mensual, Declaración Anual, ITF, auditoría externa anual</span></li>
-                </ol>
-              </div>
+              <div class="playbook-steps"><ol>
+                <li data-step="1"><span class="step-title">Día 1 · Traspaso</span><span class="step-desc">Sistema contable, plan de cuentas, EEFF históricos</span></li>
+                <li data-step="2"><span class="step-title">Semana 1 · Fiscal</span><span class="step-desc">Régimen, IGV, Renta, retenciones, detracciones</span></li>
+                <li data-step="3"><span class="step-title">Centros de costo</span><span class="step-desc">Prorrateo, fondo promoción, mantenimiento</span></li>
+                <li data-step="4"><span class="step-title">Mes 1 · Cierre</span><span class="step-desc">Primer cierre completo con supervisión</span></li>
+                <li data-step="5"><span class="step-title">Calendario fiscal</span><span class="step-desc">PDT mensual, Declaración Anual, ITF, auditoría</span></li>
+              </ol></div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <!-- Detailed: Limpieza -->
-      <section class="section" style="background: var(--pa-white);">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-eyebrow">Detalle · Playbook 6</span>
-            <h2>Personal de Limpieza</h2>
-            <p>El personal de limpieza es la columna vertebral de la experiencia del visitante. Su trabajo impacta directamente la percepción de seguridad, higiene y calidad del centro comercial.</p>
-          </div>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-phase">Fase 0 · Pre-ingreso</div>
-              <div class="timeline-title">Documentación y preparación</div>
-              <ul class="timeline-checklist">
-                <li>Contrato firmado, examen médico ocupacional, antecedentes penales/policiales</li>
-                <li>Entrega de Reglamento Interno de Trabajo con acuse de recibo</li>
-                <li>Asignación de uniforme (2 juegos), credencial, EPP básico</li>
-                <li>Designación de mentor (operador experimentado)</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">Día 1 · Inducción General</div>
-              <div class="timeline-title">Agenda completa de 8 horas</div>
-              <ul class="timeline-checklist">
-                <li>08:00 — Bienvenida institucional, misión/visión</li>
-                <li>08:30 — Recorrido: baños, áreas comunes, patio de comidas, estacionamiento, descarga</li>
-                <li>10:00 — Entrega de herramientas y EPP (carro, mopa, productos, guantes, calzado antideslizante)</li>
-                <li>10:30 — Demostración práctica: barrido, trapeado, uso de productos</li>
-                <li>13:00 — Protocolo de segregación de residuos (orgánicos, reciclables, no reciclables)</li>
-                <li>14:00 — Protocolo de limpieza de baños (checklist, frecuencia cada 60 min, estándar)</li>
-                <li>15:30 — Uso de radio comunicador y app de reportes</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">Semana 1 · Formación Técnica</div>
-              <div class="timeline-title">Habilidades por día</div>
-              <ul class="timeline-checklist">
-                <li>Día 2: Técnicas por superficie (mármol, cerámica, acero, vidrio, alfombra)</li>
-                <li>Día 3: Manejo correcto de productos químicos — diluciones, etiquetado, MSDS</li>
-                <li>Día 4: Operación de máquinas (hidrolavadora, pulidora, aspiradora industrial)</li>
-                <li>Día 5: Protocolo de limpieza en horario de operación vs nocturno</li>
-                <li>Día 6: Protocolo de derrames (líquidos, alimentos, sustancias peligrosas)</li>
-                <li>Día 7: Evaluación práctica supervisada + retroalimentación</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">Certificaciones requeridas</div>
-              <div class="timeline-title">Cumplimiento legal (Ley 29783)</div>
-              <ul class="timeline-checklist">
-                <li>Curso de manipulación de productos químicos (primer mes, renovación anual)</li>
-                <li>Curso de trabajo en alturas (si aplica, antes de la tarea, cada 2 años)</li>
-                <li>Inducción de seguridad y salud ocupacional (Día 1, anual)</li>
-                <li>Primeros auxilios básicos (deseable para supervisores)</li>
-                <li>Manejo de residuos peligrosos (si aplica, primer mes, anual)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Detailed: Analistas y Administradores -->
-      <section class="section">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-eyebrow">Detalle · Playbooks 7 & 8</span>
-            <h2>Analistas y Administradores</h2>
-            <p>Dos roles de oficina con alta exposición a sistemas, datos y locatarios. La clave del onboarding está en el acceso correcto a información y la construcción de relaciones con el ecosistema del CC.</p>
-          </div>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-phase">Analistas · Track financiero</div>
-              <div class="timeline-title">Modelos, proyecciones y reportes</div>
-              <ul class="timeline-checklist">
-                <li>Acceso a estados financieros históricos y ERP contable</li>
-                <li>Modelos de proyección de ingresos (rentas, estacionamiento, eventos, publicidad)</li>
-                <li>Análisis de rentabilidad por locatario y categoría</li>
-                <li>Reportes semanales de KPIs financieros a gerencia</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">Analistas · Track marketing</div>
-              <div class="timeline-title">Campañas, tráfico y conversión</div>
-              <ul class="timeline-checklist">
-                <li>Dashboard de tráfico (footfall), conversión por local, ticket promedio</li>
-                <li>ROI de campañas pasadas, CAC por canal, atribución</li>
-                <li>Análisis de redes sociales: engagement, alcance, sentimiento</li>
-                <li>Reportes de benchmark vs otros CC de Lima Norte</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">Analistas · Track operaciones</div>
-              <div class="timeline-title">Eficiencia, mantenimiento, proveedores</div>
-              <ul class="timeline-checklist">
-                <li>KPIs de operaciones: tiempo de respuesta a tickets, consumo energético, ocupación</li>
-                <li>Evaluación de proveedores: SLAs, costos comparativos, calidad</li>
-                <li>Reportes de ocupación y rotación de locatarios</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">Administradores · Semana 1</div>
-              <div class="timeline-title">Procesos clave día por día</div>
-              <ul class="timeline-checklist">
-                <li>Día 1: Recorrido BOH (back of house), accesos de servicio, almacenes, muelles</li>
-                <li>Día 2: Gestión de contratos de arrendamiento y renovaciones</li>
-                <li>Día 3: Relación con locatarios: facturación, cobranza, consumos</li>
-                <li>Día 4: Gestión de proveedores: limpieza, seguridad, mantenimiento, jardinería</li>
-                <li>Día 5: Sistemas: ERP, CRM, CCTV, control de accesos, tickets de mantenimiento</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">Administradores · Responsabilidades críticas</div>
-              <div class="timeline-title">Lo que no puede fallar</div>
-              <ul class="timeline-checklist">
-                <li>Protocolo de apertura/cierre del CC (checklist de 20+ ítems)</li>
-                <li>Protocolo de emergencias: evacuación, sismos, incendios, amenazas</li>
-                <li>Control de accesos: proveedores, carga/descarga, estacionamiento</li>
-                <li>Coordinación con seguridad física: rondas, CCTV, incidentes</li>
-                <li>Certificaciones: facility management, defensa civil, ISO 41001</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Detailed: Contador -->
-      <section class="section" style="background: var(--pa-white);">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-eyebrow">Detalle · Playbook 9</span>
-            <h2>Contador</h2>
-            <p>El corazón financiero del centro comercial. Maneja facturación a 40+ locatarios, impuestos, nóminas y cierres contables. El onboarding debe ser quirúrgico porque un error fiscal es caro.</p>
-          </div>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-phase">Día 1 · Traspaso contable</div>
-              <div class="timeline-title">Acceso y contexto financiero</div>
-              <ul class="timeline-checklist">
-                <li>Acceso al sistema contable, plan de cuentas, auxiliares y mayores</li>
-                <li>Estados financieros de los últimos 12 meses</li>
-                <li>Listado de locatarios activos con datos de facturación</li>
-                <li>Revisión de conciliaciones bancarias del último trimestre</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">Semana 1 · Estructura fiscal</div>
-              <div class="timeline-title">Impuestos y obligaciones</div>
-              <ul class="timeline-checklist">
-                <li>Régimen tributario vigente del CC y sus obligaciones</li>
-                <li>IGV (18%), Impuesto a la Renta (29.5%), retenciones y detracciones</li>
-                <li>Emisión de facturación electrónica a locatarios</li>
-                <li>Nóminas y contribuciones sociales: Essalud, ONP/AFP, CTS, gratificaciones</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">Semana 2 · Centros de costo</div>
-              <div class="timeline-title">Estructura específica de un CC</div>
-              <ul class="timeline-checklist">
-                <li>Prorrateo de gastos comunes entre locatarios (agua, luz, seguridad, limpieza)</li>
-                <li>Fondo de promoción: recaudación y rendición de cuentas</li>
-                <li>Mantenimiento de áreas comunes: % por metro cuadrado</li>
-                <li>Ingresos por alquiler de espacios publicitarios y eventos</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">Mes 1 · Primer cierre</div>
-              <div class="timeline-title">Cierre contable completo</div>
-              <ul class="timeline-checklist">
-                <li>Primer cierre mensual completo con supervisión</li>
-                <li>Presentación de resultados a gerencia</li>
-                <li>Arqueos sorpresivos de caja (si hay recaudación directa)</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-phase">Calendario fiscal anual</div>
-              <div class="timeline-title">Fechas que no se pueden fallar</div>
-              <ul class="timeline-checklist">
-                <li>PDT IGV-Renta mensual (hasta el día 12-18 según último dígito RUC)</li>
-                <li>Declaración Anual de Renta (marzo-abril)</li>
-                <li>ITF (Impuesto a las Transacciones Financieras)</li>
-                <li>DAOT (Declaración Anual de Operaciones con Terceros)</li>
-                <li>Auditoría externa anual (coordinación y preparación)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div><!-- /panel-personal -->
-
-  </div><!-- /slider-track -->
-
-  <!-- Slider arrows -->
-  <div class="slider-arrows">
-    <button class="slider-arrow slider-arrow--prev" onclick="prevSlide()" aria-label="Anterior">◂</button>
-    <button class="slider-arrow slider-arrow--next" onclick="nextSlide()" aria-label="Siguiente">▸</button>
+    </div><!-- /slider-track -->
+    <div class="slider-arrows">
+      <button class="slider-arrow slider-arrow--prev" onclick="prevSlide()" aria-label="Anterior">◂</button>
+      <button class="slider-arrow slider-arrow--next" onclick="nextSlide()" aria-label="Siguiente">▸</button>
+    </div>
   </div>
-</div><!-- /slider-wrapper -->
+  <div class="slider-dots">
+    <button class="slider-dot active" onclick="goToSlide(0)" aria-label="Operativos"></button>
+    <button class="slider-dot" onclick="goToSlide(1)" aria-label="Plataforma"></button>
+    <button class="slider-dot" onclick="goToSlide(2)" aria-label="Personal"></button>
+  </div>
+</section>
 
-<!-- Dots -->
-<div class="slider-dots">
-  <button class="slider-dot active" onclick="goToSlide(0)" aria-label="Playbooks Operativos"></button>
-  <button class="slider-dot" onclick="goToSlide(1)" aria-label="Playbooks Plataforma"></button>
-  <button class="slider-dot" onclick="goToSlide(2)" aria-label="Playbooks Personal"></button>
-</div>
+<!-- ====== SECTION 2: MIRROR DETAIL ====== -->
+<section class="mirror-section" id="mirror-section">
+  <div class="container">
+    <div id="mirror-detail">
+      <div class="mirror-placeholder">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        <h3>Selecciona un playbook</h3>
+        <p>Haz clic en cualquiera de las 9 tarjetas de arriba para ver el detalle completo de ese playbook aquí.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="cta-section">
-  <h2>¿Listo para automatizar estos playbooks en Plaza Aurora?</h2>
-  <p>Estos procesos se pueden implementar con n8n, Google Sheets, WhatsApp API y Notion. El equipo de Futuraria te ayuda a montarlo en días, no en meses.</p>
+  <h2>¿Listo para automatizar estos playbooks?</h2>
+  <p>Estos procesos se implementan con n8n, Google Sheets, WhatsApp API y Notion. Futuraria te ayuda a montarlo en días.</p>
   <a href="https://wa.me/51916510730" class="btn" target="_blank">Hablar con Futuraria →</a>
 </section>
 
 <footer class="footer">
-  <p>Playbooks de Onboarding · <a href="https://plazaaurora.futuraria.com" target="_blank">Plaza Aurora</a> · Desarrollado por <a href="https://futuraria.com" target="_blank">Futuraria</a> · 2026</p>
+  <p>Playbooks de Onboarding · <a href="https://plazaaurora.futuraria.com">Plaza Aurora</a> · Desarrollado por <a href="https://futuraria.com">Futuraria</a> · 2026</p>
 </footer>
 
 <script>
-(function() {
-  const track = document.getElementById('sliderTrack');
-  const dots = document.querySelectorAll('.slider-dot');
-  let current = 0;
-  const total = dots.length;
-  let autoInterval;
-  let paused = false;
-  let touchStartX = 0;
-  let touchMoved = false;
+// ======= SLIDER (MANUAL ONLY) =======
+const track = document.getElementById('sliderTrack');
+const dots = document.querySelectorAll('.slider-dot');
+let current = 0;
+const total = dots.length;
 
-  function updateSlider(index) {
-    current = ((index % total) + total) % total;
-    track.style.transform = `translateX(-${current * 100}%)`;
-    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+function updateSlider(i) {
+  current = ((i % total) + total) % total;
+  track.style.transform = `translateX(-${current * 100}%)`;
+  dots.forEach((d, j) => d.classList.toggle('active', j === current));
+}
+window.goToSlide = function(i) { updateSlider(i); };
+window.nextSlide = function() { updateSlider(current + 1); };
+window.prevSlide = function() { updateSlider(current - 1); };
+
+// Touch swipe
+let touchStartX = 0;
+track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive:true});
+track.addEventListener('touchend', e => {
+  const diff = e.changedTouches[0].clientX - touchStartX;
+  if (Math.abs(diff) > 50) { if (diff > 0) updateSlider(current - 1); else updateSlider(current + 1); }
+});
+
+// Keyboard
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') updateSlider(current + 1);
+  if (e.key === 'ArrowLeft') updateSlider(current - 1);
+});
+
+// ======= MIRROR DETAIL SYSTEM =======
+const details = {};
+
+// Helper: timeline item HTML
+function T(phase, title, desc, items) {
+  let html = `<div class="timeline-item"><div class="timeline-phase">${phase}</div><div class="timeline-title">${title}</div>`;
+  if (desc) html += `<div class="timeline-desc">${desc}</div>`;
+  if (items && items.length) {
+    html += '<ul class="timeline-checklist">';
+    items.forEach(i => html += `<li>${i}</li>`);
+    html += '</ul>';
   }
+  return html + '</div>';
+}
 
-  window.goToSlide = function(i) {
-    updateSlider(i);
-    resetAuto();
-  };
+// 1. Bienvenida de Equipo
+details[1] = {
+  icon: '👋', title: 'Bienvenida de Equipo (30·60·90)', subtitle: 'Playbook 1 · Playbooks Operativos',
+  html: T('Pre-boarding · Antes del día 1', 'Preparación y documentación', 'Todo listo para que la persona arranque sin fricción.', [
+    'Contrato firmado y enviado a contabilidad',
+    'Creación de correo corporativo (@plazaaurora.com)',
+    'Accesos: CRM, Google Drive, Slack/WhatsApp, calendario',
+    'Kit de bienvenida: manual del empleado, croquis del CC, directorio',
+    'Asignación de buddy/mentor',
+    'Agenda de primera semana enviada por correo'
+  ]) +
+  T('Semana 1 · Inmersión', 'Conocer el terreno y las personas', '100% conocer: espacio, personas, cultura, procesos. Cero presión de output.', [
+    'Recorrido completo por el CC (locales, accesos, estacionamiento, eventos)',
+    'Presentación con cada jefe de área y locatarios clave',
+    'Sesión de marca: historia, misión, valores, tono de comunicación',
+    'Training de herramientas: CRM, calendario de eventos, tickets',
+    'Almuerzo de bienvenida con el equipo directo'
+  ]) +
+  T('Día 30 · Autonomía inicial', 'Primera revisión y manejo básico', 'Ya conoce la operación diaria. Resuelve tareas sin supervisión constante.', [
+    'Revisión 1:1 con jefe directo',
+    'Maneja solo(a) el CRM y calendario de eventos',
+    'Comunicación directa con al menos 5 locatarios',
+    'Participó en al menos 1 evento o campaña',
+    'Feedback escrito del buddy/mentor'
+  ]) +
+  T('Día 60 · Proyectos reales', 'Liderazgo de iniciativas pequeñas', 'De observador a ejecutor. Toma ownership de un proyecto pequeño pero real.', [
+    'Lidera una mini-campaña o evento',
+    'Revisión de desempeño con KPIs medibles',
+    'Identifica oportunidades de mejora en su área',
+    'Sesión de feedback 360° con el equipo'
+  ]) +
+  T('Día 90 · Integración total', 'Miembro pleno del equipo', 'Totalmente integrado(a). Conoce procesos, tiene relaciones, genera resultados.', [
+    'Evaluación final de onboarding',
+    'Definición de OKRs para el año',
+    'Plan de crecimiento: capacitaciones, cursos',
+    'Ceremonia de cierre: reconocimiento del equipo'
+  ])
+};
 
-  window.nextSlide = function() {
-    updateSlider(current + 1);
-    resetAuto();
-  };
+// 2. Locatarios
+details[2] = {
+  icon: '🏪', title: 'Incorporación de Locatarios', subtitle: 'Playbook 2 · Playbooks Operativos',
+  html:
+  T('Fase 1 · Legal (Semana 1-2)', 'Contrato, garantías y permisos', 'Todo el papeleo listo antes de tocar un ladrillo. Sin excepciones.', [
+    'Firma de contrato de arrendamiento (plazo, renta, mantenimiento, penalidades)',
+    'Entrega de carta garantía o depósito en garantía',
+    'Póliza de seguro de responsabilidad civil',
+    'Permisos municipales: licencia de funcionamiento, defensa civil, INDECI',
+    'Entrega de planos arquitectónicos del local',
+    'Ficha RUC activa y vigente'
+  ]) +
+  T('Fase 2 · Adecuación (Semana 3-6)', 'Obra civil e instalaciones', 'El locatario adecúa el espacio según lineamientos del CC. Administración supervisa.', [
+    'Entrega de local en obra gris (o casco terminado según acuerdo)',
+    'Instalaciones eléctricas, sanitarias, data y HVAC',
+    'Pisos, paredes, cielo raso según estándares del CC',
+    'Supervisión semanal de avance de obra (checklist de hitos)',
+    'Conexión a red de datos y telefonía del CC',
+    'Pruebas de sistemas contra incendios y rutas de evacuación'
+  ]) +
+  T('Fase 3 · Branding (Semana 5-7)', 'Identidad visual y vitrinas', 'Todo letrero, vitrina y uniforme requiere aprobación del CC.', [
+    'Presentación de diseño de letrero principal (medidas, iluminación, materiales)',
+    'Aprobación del diseño de vitrinas y fachada interior',
+    'Uniformes del personal aprobados',
+    'Material POP autorizado (banners, displays, colgantes)',
+    'Cartel de "Próxima apertura" instalado',
+    'Fotografía profesional del local para web y redes del CC'
+  ]) +
+  T('Fase 4 · Capacitación (Semana 7-8)', 'Entrenamiento de personal del local', 'Todo el personal debe conocer las normas y protocolos del CC.', [
+    'Inducción de normas del CC: horarios, residuos, carga y descarga',
+    'Protocolo de seguridad y emergencias (evacuación, sismos, incendios)',
+    'Manual de convivencia: ruido, olores, manejo de residuos',
+    'Canales de comunicación: WhatsApp de locatarios, app del CC',
+    'Capacitación en atención al cliente (estándar Plaza Aurora)',
+    'Alta en el directorio del CC (web, app, pantallas)'
+  ]) +
+  T('Fase 5 · Inauguración (Semana 8-9)', 'Apertura y promoción', 'La inauguración beneficia a todos. El CC difunde, el locatario ofrece.', [
+    'Definición de fecha de inauguración (coordinar con calendario del CC)',
+    'Ofertas de inauguración (descuentos, 2x1, regalos por compra)',
+    'Difusión en redes sociales del CC (3 posts: previo, día, posterior)',
+    'Anuncio en pantallas y banners del CC',
+    'Inauguración con ceremonia de corte de cinta',
+    'Post-apertura: encuesta de satisfacción al locatario (día 30)'
+  ])
+};
 
-  window.prevSlide = function() {
-    updateSlider(current - 1);
-    resetAuto();
-  };
+// 3. Campañas Marketing
+details[3] = {
+  icon: '📣', title: 'Lanzamiento de Campañas de Marketing', subtitle: 'Playbook 3 · Playbooks Operativos',
+  html:
+  T('Fase 1 · Brief (3-4 semanas antes)', 'Definir el qué, por qué y para quién', 'Sin un brief sólido, la campaña nace muerta.', [
+    'Objetivo SMART: ¿tráfico, ventas, awareness, fidelización?',
+    'Audiencia: edad, zona (Independencia, Los Olivos, Lima Norte), intereses',
+    'Presupuesto desglosado: producción, pauta, premios, logística',
+    'Fechas clave: inicio, hitos, cierre, post-mortem',
+    'KPIs: footfall, ventas reportadas, alcance RRSS, nuevos seguidores',
+    'Alineación con locatarios: reunión de presentación de campaña'
+  ]) +
+  T('Fase 2 · Creatividad (2-3 semanas antes)', 'Assets visuales y copy', 'Todas las piezas listas y aprobadas al menos 1 semana antes.', [
+    'Concepto creativo: nombre de campaña, tagline, paleta de colores',
+    'Piezas gráficas: Instagram (feed + stories), Facebook, TikTok, email',
+    'Landing page o enlace de destino (WhatsApp, web del CC)',
+    'Material audiovisual: reels, videos para pantallas del CC',
+    'Copy para cada canal (adaptado por formato)',
+    'Aprobación final de administración'
+  ]) +
+  T('Fase 3 · Locatarios (2 semanas antes)', 'Activar a las marcas del CC', 'Una campaña sin locatarios es solo un post. La magia está en la participación.', [
+    'Envío de kit de campaña a locatarios: brief, assets, sugerencias de ofertas',
+    'Recolección de promociones de cada local participante',
+    'Brief a locatarios: qué publicar en sus redes y cuándo',
+    'Coordinación de material POP en locales (afiches, displays, floor stickers)',
+    'Confirmación de participación: quiénes entran y con qué oferta'
+  ]) +
+  T('Fase 4 · Ejecución (Día del lanzamiento)', 'Disparar en todos los canales', 'Todo calibrado. Post a las 8am, email a las 10am, pauta desde el minuto cero.', [
+    'Publicación en Instagram, Facebook, TikTok del CC',
+    'Envío de newsletter a base de suscriptores',
+    'Difusión por WhatsApp a lista de difusión',
+    'Pauta digital activa: Meta Ads, Google Ads, TikTok Ads (segmentada Lima Norte)',
+    'Pantallas del CC: banners de campaña en rotación',
+    'Locatarios publican en sus redes con hashtag de campaña',
+    'Monitor de campaña: revisar métricas cada 4 horas el primer día'
+  ]) +
+  T('Fase 5 · Medición (1 semana después)', 'Reporte, aprendizajes y próximos pasos', 'Lo que no se mide no existe. Cada campaña cierra con números y lecciones.', [
+    'Reporte de resultados: KPIs vs objetivo (footfall, ventas, engagement, leads)',
+    'Encuesta post-campaña a locatarios participantes',
+    'Reunión de cierre con el equipo: ¿qué funcionó? ¿qué no?',
+    'Documentar aprendizajes en playbook (mejora continua)',
+    'Publicación de resultados en LinkedIn del CC',
+    'Plan de nurturing a nuevos leads captados durante la campaña'
+  ])
+};
 
-  function resetAuto() {
-    clearInterval(autoInterval);
-    if (!paused) startAuto();
-  }
-  function startAuto() {
-    autoInterval = setInterval(() => updateSlider(current + 1), 8000);
-  }
+// 4. Marketing y Agencias (Plataforma)
+details[4] = {
+  icon: '🤖', title: 'Onboarding de Marketing y Agencias', subtitle: 'Playbook 4 · Playbooks Plataforma · Automatizado',
+  html:
+  T('Día 0 · Entrada al sistema', 'Mensaje de bienvenida al proyecto', 'Al agregar a la persona al sistema (CRM o Google Workspace), se dispara el workflow automáticamente.', [
+    'Email de bienvenida con: presentación del equipo, objetivos del CC, tono de comunicación',
+    'Accesos generados automáticamente: Drive (carpeta marketing), Slack/WhatsApp, calendario editorial',
+    'Invitación a Notion con guía de marca: logos, paleta, tipografías, tamaños, formatos',
+    'Credenciales temporales con vigencia de 7 días (fuerzan el primer login)'
+  ]) +
+  T('Día +1 a +3 · Verificación', '¿Ya entró? Monitoreo de acceso', 'El sistema monitorea si la persona inició sesión. Si no lo hace en 3 días, escala.', [
+    'Día 1: verificación silenciosa de login en Google Workspace y CRM',
+    'Día 2: si no entró → recordatorio automático por email',
+    'Día 3: si sigue sin entrar → WhatsApp al manager: "Fulanita aún no activó sus accesos"',
+    'Registro en dashboard interno: % de onboardings completados vs pendientes'
+  ]) +
+  T('Inmediato · Al verificar acceso', 'WhatsApp de bienvenida personalizado', 'Una vez que el sistema detecta el primer login, envía un WhatsApp con todo lo necesario.', [
+    '"¡Hola [Nombre]! Bienvenida al equipo de Plaza Aurora 🎉"',
+    'Resumen de accesos: links directos a Drive, calendario, CRM, grupo de WhatsApp',
+    'Fecha límite para completar perfil: "Tienes hasta el [fecha] para revisar los materiales"',
+    'Link al videotutorial que se enviará en 1 hora',
+    'Frase de cierre: "Cualquier duda, responde a este mensaje y te contactamos"'
+  ]) +
+  T('+1 hora · Después del WhatsApp', 'Email con videotutorial', 'Una hora después del WhatsApp, el sistema envía un correo con contenido formativo.', [
+    'Video tutorial de 5-7 min: recorrido por herramientas y procesos clave',
+    'Incluye: cómo usar el calendario editorial, subir contenido, flujo de aprobaciones',
+    'PDF descargable con resumen de 1 página',
+    'Link a canal de Slack/WhatsApp para preguntas rápidas'
+  ]) +
+  T('+48 horas · Solo Managers', 'Cita de alineación (20 min)', 'Si la persona tiene rol de manager, se agenda una videollamada breve para conocerse.', [
+    'Link de Cal.com: "Alineación de objetivos · 20 min"',
+    'Agenda sugerida: 5 min presentación, 10 min objetivos del trimestre, 5 min dudas',
+    'Tono casual, no es evaluación: es para conocerse y asegurar claridad',
+    'Si no agenda en 5 días → recordatorio automático'
+  ]) +
+  T('Caso especial · Agencias', 'Playbook para Agencias (no empleados)', 'Las agencias no son personal interno. El tono es estratégico y colaborativo.', [
+    'Mensaje de bienvenida con tono de partnership: "Estamos felices de colaborar con ustedes"',
+    'Kit de marca completo en Notion: guía de estilo, paleta, tipografías, logos',
+    'Especificaciones técnicas: tamaños por canal, formatos, pesos máximos',
+    'Calendario editorial compartido + proceso de aprobación de piezas',
+    'Contacto directo: quién aprueba qué y en qué plazo (SLA: 24h hábiles)',
+    'Reunión inicial de 30 min: alineación estratégica, no táctica'
+  ])
+};
 
-  // Pause on hover/touch
-  track.addEventListener('mouseenter', () => { paused = true; clearInterval(autoInterval); });
-  track.addEventListener('mouseleave', () => { paused = false; startAuto(); });
+// 5. Locatarios (Sistema)
+details[5] = {
+  icon: '⚙️', title: 'Onboarding de Locatarios (Sistema Interno)', subtitle: 'Playbook 5 · Playbooks Plataforma · Automatizado',
+  html:
+  T('Gatillo · Firma de contrato', 'Alta automática en el sistema', 'Cuando el contrato se marca como firmado en el CRM, todo lo demás se dispara solo.', [
+    'Registro del locatario en CRM: razón social, RUC, contacto, categoría, local asignado',
+    'Creación automática de carpeta en Drive con 5 subcarpetas (Legal, Construcción, Branding, Capacitación, Launch)',
+    'Asignación de fechas estimadas para cada fase (basado en contrato)',
+    'Notificación al equipo interno: "Nuevo locatario: [Marca] — apertura estimada: [fecha]"'
+  ]) +
+  T('Inmediato · Comunicación', 'Notificación y kit al locatario', 'El locatario recibe todo sin tener que perseguir a nadie.', [
+    'WhatsApp automático: "¡Bienvenido a Plaza Aurora, [Marca]! Aquí todo para tu apertura"',
+    'PDF del kit de bienvenida: croquis del CC, normas, contactos clave, cronograma',
+    'Fechas límite claras para cada entregable (permisos, planos, letrero)',
+    'Link al checklist digital donde verá su progreso en tiempo real'
+  ]) +
+  T('Continuo · Seguimiento', 'Tracking de fases con recordatorios', 'El sistema monitorea cada fase y envía recordatorios. Nadie tiene que acordarse.', [
+    'Fase 1 (Docs legales): recordatorio 7 y 3 días antes del deadline',
+    'Fase 2 (Obra): check-in semanal automático por WhatsApp',
+    'Fase 3 (Branding): notificación cuando el letrero está pendiente de aprobación',
+    'Fase 4 (Capacitación): invitación automática a inducción cuando obra llega al 80%',
+    'Fase 5 (Inauguración): coordinación automática con calendario del CC'
+  ]) +
+  T('En tiempo real · Visibilidad', 'Checklist digital para el locatario', 'Un enlace compartido donde el locatario ve exactamente qué falta.', [
+    'Visualización tipo progreso: barra de % completado',
+    'Ítems marcados como ✅ por el CC cuando reciben aprobación',
+    'Comentarios en cada ítem: qué falta exactamente, quién lo revisa',
+    'El locatario puede subir archivos directamente (planos, seguros, fotos de avance)'
+  ]) +
+  T('+30 días post-apertura', 'Encuesta de satisfacción automática', 'Un mes después de la inauguración, el sistema envía una encuesta.', [
+    'Encuesta breve (5 preguntas): satisfacción general, claridad, comunicación, sugerencias',
+    'Resultados se registran en el perfil del locatario en CRM',
+    'Si puntuación < 3/5 → alerta al gerente del CC para follow-up personal',
+    'Datos alimentan mejora continua del playbook'
+  ])
+};
 
-  // Touch/swipe
-  track.addEventListener('touchstart', (e) => {
-    paused = true; clearInterval(autoInterval);
-    touchStartX = e.touches[0].clientX;
-    touchMoved = false;
-  }, { passive: true });
+// 6. Limpieza
+details[6] = {
+  icon: '🧹', title: 'Personal de Limpieza', subtitle: 'Playbook 6 · Playbooks Personal · Presencial',
+  html:
+  T('Fase 0 · Pre-ingreso', 'Documentación y preparación', '', [
+    'Contrato firmado, examen médico ocupacional, antecedentes penales/policiales',
+    'Entrega de Reglamento Interno de Trabajo con acuse de recibo',
+    'Asignación de uniforme (2 juegos), credencial, EPP básico',
+    'Designación de mentor (operador experimentado)'
+  ]) +
+  T('Día 1 · Inducción General', 'Agenda completa de 8 horas', '', [
+    '08:00 — Bienvenida institucional, misión/visión',
+    '08:30 — Recorrido: baños, áreas comunes, patio de comidas, estacionamiento, descarga',
+    '10:00 — Entrega de herramientas y EPP (carro, mopa, productos, guantes, calzado)',
+    '10:30 — Demostración práctica: barrido, trapeado, uso de productos',
+    '13:00 — Protocolo de segregación de residuos (orgánicos, reciclables, no reciclables)',
+    '14:00 — Protocolo de limpieza de baños (checklist, frecuencia 60 min, estándar)',
+    '15:30 — Uso de radio comunicador y app de reportes'
+  ]) +
+  T('Semana 1 · Formación Técnica', 'Habilidades por día', '', [
+    'Día 2: Técnicas por superficie (mármol, cerámica, acero, vidrio, alfombra)',
+    'Día 3: Manejo correcto de productos químicos — diluciones, etiquetado, MSDS',
+    'Día 4: Operación de máquinas (hidrolavadora, pulidora, aspiradora industrial)',
+    'Día 5: Protocolo de limpieza en horario de operación vs nocturno',
+    'Día 6: Protocolo de derrames (líquidos, alimentos, sustancias peligrosas)',
+    'Día 7: Evaluación práctica supervisada + retroalimentación'
+  ]) +
+  T('Certificaciones requeridas', 'Cumplimiento legal (Ley 29783)', '', [
+    'Curso de manipulación de productos químicos (primer mes, renovación anual)',
+    'Curso de trabajo en alturas (si aplica, antes de la tarea, cada 2 años)',
+    'Inducción de seguridad y salud ocupacional (Día 1, anual)',
+    'Primeros auxilios básicos (deseable para supervisores)',
+    'Manejo de residuos peligrosos (si aplica, primer mes, anual)'
+  ])
+};
 
-  track.addEventListener('touchmove', (e) => {
-    touchMoved = true;
-  }, { passive: true });
+// 7. Analistas
+details[7] = {
+  icon: '📊', title: 'Analistas', subtitle: 'Playbook 7 · Playbooks Personal · Híbrido',
+  html:
+  T('Día 1 · Inmersión', 'Sistemas, datos y contexto', '', [
+    'Acceso a sistemas, bases de datos y dashboards del área',
+    'Reunión con jefe de área: organigrama, prioridades del trimestre',
+    'Revisión de reportes históricos (últimos 6 meses)',
+    'Mapeo de fuentes de datos y contactos clave por área'
+  ]) +
+  T('Track · Analista Financiero', 'Modelos, proyecciones y reportes', '', [
+    'Acceso a estados financieros históricos y ERP contable',
+    'Modelos de proyección de ingresos (rentas, estacionamiento, eventos, publicidad)',
+    'Análisis de rentabilidad por locatario y categoría',
+    'Reportes semanales de KPIs financieros a gerencia'
+  ]) +
+  T('Track · Analista de Marketing', 'Campañas, tráfico y conversión', '', [
+    'Dashboard de tráfico (footfall), conversión por local, ticket promedio',
+    'ROI de campañas pasadas, CAC por canal, atribución',
+    'Análisis de redes sociales: engagement, alcance, sentimiento',
+    'Reportes de benchmark vs otros CC de Lima Norte'
+  ]) +
+  T('Track · Analista de Operaciones', 'Eficiencia, mantenimiento, proveedores', '', [
+    'KPIs de operaciones: tiempo de respuesta a tickets, consumo energético, ocupación',
+    'Evaluación de proveedores: SLAs, costos comparativos, calidad',
+    'Reportes de ocupación y rotación de locatarios'
+  ]) +
+  T('Confidencialidad y compliance', 'Protección de datos', '', [
+    'Firma de NDA y políticas de confidencialidad',
+    'Acceso a datos por niveles (solo los necesarios para su función)',
+    'Protocolo de manejo de información sensible de locatarios'
+  ])
+};
 
-  track.addEventListener('touchend', (e) => {
-    const diff = e.changedTouches[0].clientX - touchStartX;
-    if (touchMoved && Math.abs(diff) > 50) {
-      if (diff > 0) updateSlider(current - 1);
-      else updateSlider(current + 1);
-    }
-    paused = false; startAuto();
-  });
+// 8. Administradores
+details[8] = {
+  icon: '📋', title: 'Administradores', subtitle: 'Playbook 8 · Playbooks Personal · Presencial',
+  html:
+  T('Día 1 · Recorrido BOH', 'Back of house y zonas de servicio', '', [
+    'Recorrido completo: almacenes, cuarto de máquinas, accesos de servicio, muelles de carga',
+    'Presentación al equipo de seguridad, limpieza y mantenimiento',
+    'Entrega de llaves maestras y códigos de acceso',
+    'Directorio de proveedores y contactos de emergencia'
+  ]) +
+  T('Semana 1 · Procesos (por día)', 'Contratos, locatarios y proveedores', '', [
+    'Día 2: Gestión de contratos de arrendamiento, renovaciones, morosidad',
+    'Día 3: Relación con locatarios — facturación, cobranza, consumos, reclamos',
+    'Día 4: Gestión de proveedores — limpieza, seguridad, mantenimiento, jardinería',
+    'Día 5: Sistemas — ERP, CRM, CCTV, control de accesos, tickets de mantenimiento'
+  ]) +
+  T('Protocolos críticos', 'Lo que no puede fallar', '', [
+    'Protocolo de apertura/cierre del CC (checklist de 20+ ítems)',
+    'Protocolo de emergencias: evacuación, sismos, incendios, amenazas',
+    'Control de accesos: proveedores, carga/descarga, estacionamiento',
+    'Coordinación con seguridad física: rondas, CCTV, incidentes'
+  ]) +
+  T('Certificaciones deseables', 'Desarrollo profesional continuo', '', [
+    'Gestión de facilities management',
+    'Defensa civil y gestión de riesgos',
+    'ISO 41001 — Facility management',
+    'Curso de primeros auxilios y brigada de emergencia'
+  ])
+};
 
-  // Keyboard arrows
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight') { window.nextSlide(); }
-    if (e.key === 'ArrowLeft') { window.prevSlide(); }
-  });
+// 9. Contador
+details[9] = {
+  icon: '🧮', title: 'Contador', subtitle: 'Playbook 9 · Playbooks Personal · Híbrido',
+  html:
+  T('Día 1 · Traspaso contable', 'Acceso y contexto financiero', '', [
+    'Acceso al sistema contable, plan de cuentas, auxiliares y mayores',
+    'Estados financieros de los últimos 12 meses',
+    'Listado de locatarios activos con datos de facturación',
+    'Revisión de conciliaciones bancarias del último trimestre'
+  ]) +
+  T('Semana 1 · Estructura fiscal', 'Impuestos y obligaciones', '', [
+    'Régimen tributario vigente del CC y sus obligaciones',
+    'IGV (18%), Impuesto a la Renta (29.5%), retenciones y detracciones',
+    'Emisión de facturación electrónica a locatarios',
+    'Nóminas y contribuciones: Essalud, ONP/AFP, CTS, gratificaciones'
+  ]) +
+  T('Semana 2 · Centros de costo', 'Estructura específica de un CC', '', [
+    'Prorrateo de gastos comunes entre locatarios (agua, luz, seguridad, limpieza)',
+    'Fondo de promoción: recaudación y rendición de cuentas',
+    'Mantenimiento de áreas comunes: % por metro cuadrado',
+    'Ingresos por alquiler de espacios publicitarios y eventos'
+  ]) +
+  T('Mes 1 · Primer cierre', 'Cierre contable completo', '', [
+    'Primer cierre mensual completo con supervisión',
+    'Presentación de resultados a gerencia',
+    'Arqueos sorpresivos de caja (si hay recaudación directa)'
+  ]) +
+  T('Calendario fiscal anual', 'Fechas que no se pueden fallar', '', [
+    'PDT IGV-Renta mensual (hasta el día 12-18 según último dígito RUC)',
+    'Declaración Anual de Renta (marzo-abril)',
+    'ITF (Impuesto a las Transacciones Financieras)',
+    'DAOT (Declaración Anual de Operaciones con Terceros)',
+    'Auditoría externa anual (coordinación y preparación)'
+  ])
+};
 
-  startAuto();
-})();
+function showDetail(n) {
+  const d = details[n];
+  if (!d) return;
+
+  // Highlight card
+  document.querySelectorAll('.playbook-card').forEach(c => c.classList.remove('selected'));
+  const card = document.getElementById('card-' + n);
+  if (card) { card.classList.add('selected'); card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
+
+  // Render detail
+  const mirror = document.getElementById('mirror-detail');
+  mirror.innerHTML = `<div class="playbook-detail" id="detail-${n}">
+    <div class="playbook-detail-header">
+      <div class="playbook-detail-icon">${d.icon}</div>
+      <div><h3>${d.title}</h3><p>${d.subtitle}</p></div>
+    </div>
+    <div class="playbook-detail-body"><div class="timeline">${d.html}</div></div>
+  </div>`;
+
+  mirror.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Auto-show first playbook on load (optional - remove if you want the placeholder)
+// showDetail(1);
 </script>
-
 </body>
 </html>
